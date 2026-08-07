@@ -36,8 +36,8 @@ confidence: medium
 
 ## 为什么这套工具组合有效
 
-即 [[llm-wiki-生态]] 里的全部工具，恰好构成交接方案：这些工具就是在解决"知识怎么不随人走"。**工具选型**：纯代码无文档 → CodeGraph；有遗留文档+设计图 → Graphify；需要长期理解沉淀 → LLM Wiki 模式。
+即 [[llm-wiki-ecosystem]] 里的全部工具，恰好构成交接方案：这些工具就是在解决"知识怎么不随人走"。**工具选型**：纯代码无文档 → CodeGraph；有遗留文档+设计图 → Graphify；需要长期理解沉淀 → LLM Wiki 模式。
 
 ## 相关
 
-- [[spec-vs-wiki]]、[[llm-wiki-生态]]、[[god-node-analysis]]（先看核心模块）
+- [[spec-vs-wiki]]、[[llm-wiki-ecosystem]]、[[god-node-analysis]]（先看核心模块）

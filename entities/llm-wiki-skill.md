@@ -41,5 +41,5 @@ wiki/
 
 ## 相关
 
-- 概念：[[llm-wiki-生态]]
+- 概念：[[llm-wiki-ecosystem]]
 - 工具：[[llm-wiki-compiler]]（批量编译的替代路线）、[[nashsu-llm-wiki]]、[[openwiki]]

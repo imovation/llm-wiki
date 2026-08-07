@@ -10,7 +10,7 @@ confidence: medium
 
 # LLM Wiki 生态
 
-围绕 [[llm-wiki-模式]] 衍生出的工具、规范、变体全景图。本概念页梳理它们的定位关系。
+围绕 [[llm-wiki-pattern]] 衍生出的工具、规范、变体全景图。本概念页梳理它们的定位关系。
 
 ## 五项目定位对比（源自 07-18 会话）
 
@@ -44,10 +44,10 @@ Graphify（理解）→ OpenWiki（记录）→ Comet（执行+评估）
 ## 应用场景
 
 - AI 原生软件工程文档体系（哪些传统文档进 Spec、哪些进 Wiki，见 [[spec-vs-wiki]]）
-- 离职交接方案（Cookie 图谱冻结 + Spec 补齐 + Wiki 编译 + 搜索就绪）
+- 离职交接方案（CodeGraph 图谱冻结 + Spec 补齐 + Wiki 编译 + 搜索就绪）
 - 个人知识库：Obsidian + agent skill 场景化
 
 ## 相关
 
-- 核心概念：[[llm-wiki-模式]]、[[okf]]、[[spec-vs-wiki]]、[[三层架构]]
+- 核心概念：[[llm-wiki-pattern]]、[[okf]]、[[spec-vs-wiki]]、[[three-layer-architecture]]
 - 对比：[[openwiki-vs-graphify-vs-codegraph]]

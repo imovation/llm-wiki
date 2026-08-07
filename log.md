@@ -20,13 +20,13 @@
 - codegraph、comet、graphify、langsmith、llm-wiki-compiler、llm-wiki-skill、nashsu-llm-wiki、openwiki、openspec、qmd
 
 ## [2026-08-07] create | 概念页（12）
-- ast、cst-vs-ast、god-node-analysis、leiden-community-detection、llm-wiki-生态、llm-wiki-模式、lsp、okf、spec-vs-wiki、syntactic-sugar、三层架构、tree-sitter
+- ast、cst-vs-ast、god-node-analysis、leiden-community-detection、llm-wiki-ecosystem、llm-wiki-pattern、lsp、okf、spec-vs-wiki、syntactic-sugar、three-layer-architecture、tree-sitter
 
 ## [2026-08-07] create | 对比页（2）
 - graphify-vs-codegraph、openwiki-vs-graphify-vs-codegraph
 
 ## [2026-08-07] create | 查询页（1）
-- 离职交接方案
+- handover-plan
 
 ## [2026-08-07] lint | 0 个问题
 - 全量 wikilink 校验通过；修复若干候选链接与大小写（LSP→lsp）

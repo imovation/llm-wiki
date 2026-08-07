@@ -50,14 +50,17 @@ sha256:
 
 ## Tag Taxonomy（领域：LLM Wiki 生态）
 
-消费前先注册新标签。
+消费前先注册。此列表由 lint 审计（2026-08-07 全面检查时补齐，覆盖全部在用标签 43 个）。
 
-- **模式**: llm-wiki, rag-alternative, knowledge-base, three-layer, meta
-- **工具/项目**: openwiki, codegraph, graphify, qmd, llmwiki-compiler, hermes-skill, comet, openspec, nashsu-app
-- **规范**: okf, spec-driven, citation, index-log
-- **概念**: spec-vs-wiki, acl-matching, ingest, lint, query, graph-nothing
-- **场景**: handover, ai-native-engineering
-- **技术**: tree-sitter, ast, cst, leiden, god-node, mcp, cli
+- **模式**: `llm-wiki`, `wiki`, `rag-alternative`, `knowledge-base`, `three-layer`
+- **工具/项目**: `openwiki`, `graphify`, `codegraph`, `qmd`, `llmwiki-compiler`, `hermes-skill`, `comet`, `openspec`, `langsmith`, `nashsu-app`
+- **工具形态**: `cli`, `desktop`, `skill`, `search`
+- **规范/流程**: `okf`, `spec-driven`, `spec-vs-wiki`, `index-log`
+- **场景**: `handover`, `ai-native-engineering`, `workflow`
+- **技术**: `tree-sitter`, `ast`, `cst`, `parser`, `syntax`, `lsp`, `ide`, `compiler`
+- **图谱**: `knowledge-graph`, `algorithm`, `leiden`, `god-node`, `ecosystem`
+- **开发**: `ai-coding`
+- **元**: `schema`, `evaluation`, `observability`
 
 ## Page Thresholds
 

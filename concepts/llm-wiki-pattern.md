@@ -48,9 +48,9 @@ LLM Wiki 不同：
 
 - 搜索（wiki 变大后）：[[qmd]]
 - Obsidian Web Clipper 剪藏；本地下载图片；图谱视图；Marp 幻灯片；Dataview
-- 本模式的各种实现见 [[llm-wiki-生态]]
+- 本模式的各种实现见 [[llm-wiki-ecosystem]]
 
 ## 相关
 
-- 概念：[[llm-wiki-生态]]、[[okf]]、[[spec-vs-wiki]]、[[三层架构]]
+- 概念：[[llm-wiki-ecosystem]]、[[okf]]、[[spec-vs-wiki]]、[[three-layer-architecture]]
 - 工具：[[llm-wiki-skill]]（agent 操作手册）、[[nashsu-llm-wiki]]

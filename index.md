@@ -25,13 +25,13 @@
 - [[cst-vs-ast]] - 具体语法树 vs 抽象语法树（tree-sitter 产出 CST）。
 - [[god-node-analysis]] - 介数中心性最高的"神节点"，代码库核心模块定位。
 - [[leiden-community-detection]] - 图聚类算法（Louvain 改进版），自动分社区。
-- [[llm-wiki-生态]] - LLM Wiki 模式的工具/规范/变体全景图。
-- [[llm-wiki-模式]] - Karpathy 的核心模式：增量构建持久 wiki（vs RAG）。
+- [[llm-wiki-ecosystem]] - LLM Wiki 模式的工具/规范/变体全景图。
+- [[llm-wiki-pattern]] - Karpathy 的核心模式：增量构建持久 wiki（vs RAG）。
 - [[lsp]] - Language Server Protocol：编辑器与语言服务器间的标准协议。
 - [[okf]] - Google Open Knowledge Format v0.1 规范。
 - [[spec-vs-wiki]] - Spec 是指令（意图），Wiki 是知识（事实），及其分工。
 - [[syntactic-sugar]] - 语法糖：不引入新能力的语法便利特性。
-- [[三层架构]] - raw / wiki / schema 三层结构，生态共同骨架。
+- [[three-layer-architecture]] - raw / wiki / schema 三层结构，生态共同骨架。
 - [[tree-sitter]] - 通用增量 AST 解析框架（C/Rust/WASM）。
 
 ## 对比
@@ -41,4 +41,4 @@
 
 ## 查询
 
-- [[离职交接方案]] - AI 原生工程的离职交接：图谱冻结 + Spec 补齐 + Wiki 编译 + 搜索就绪。
+- [[handover-plan]] - AI 原生工程的离职交接：图谱冻结 + Spec 补齐 + Wiki 编译 + 搜索就绪。

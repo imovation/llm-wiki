@@ -42,5 +42,5 @@ LangChain（[langchain-ai](https://github.com/langchain-ai/openwiki)）开源的
 
 ## 相关
 
-- 概念：[[llm-wiki-生态]]、[[okf]]、[[spec-vs-wiki]]
+- 概念：[[llm-wiki-ecosystem]]、[[okf]]、[[spec-vs-wiki]]
 - 工具：[[graphify]]、[[codegraph]]

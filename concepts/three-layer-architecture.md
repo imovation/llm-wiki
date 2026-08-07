@@ -43,4 +43,4 @@ Schema（模式）             ← 规则、约定、领域定义 & 工作流
 
 ## 相关
 
-- [[llm-wiki-模式]]、[[llm-wiki-生态]]、[[okf]]（规范了的公约）、[[llm-wiki-skill]]
+- [[llm-wiki-pattern]]、[[llm-wiki-ecosystem]]、[[okf]]（规范了的公约）、[[llm-wiki-skill]]

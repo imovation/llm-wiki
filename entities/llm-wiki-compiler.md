@@ -38,6 +38,6 @@ confidence: medium
 
 ## 相关
 
-- 概念：[[llm-wiki-生态]]、[[llm-wiki-模式]]（模式）
+- 概念：[[llm-wiki-ecosystem]]、[[llm-wiki-pattern]]（模式）
 - 工具：[[openwiki]]，[[nashsu-llm-wiki]]，[[llm-wiki-skill]]，[[okf]]
-- 对比：见 [[llm-wiki-生态]] 的"五项目定位对比"表
+- 对比：见 [[llm-wiki-ecosystem]] 的"五项目定位对比"表

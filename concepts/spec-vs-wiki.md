@@ -57,10 +57,10 @@ Wiki     = 理解层 → 从代码 + raw + spec 归档提取/综合
 ## 管理方式
 
 - Spec 用 [[openspec]] 驱动（`/opsx:propose → apply → archive`），写入 `openspec/`
-- Wiki 用 [[llm-wiki-模式]] 维护（ingest/query/lint），写入 `wiki/`
-- 二者都服务于同一个目标：**知识不随人走**（离职交接场景见 [[离职交接方案]]）
+- Wiki 用 [[llm-wiki-pattern]] 维护（ingest/query/lint），写入 `wiki/`
+- 二者都服务于同一个目标：**知识不随人走**（离职交接场景见 [[handover-plan]]）
 
 ## 相关
 
-- [[llm-wiki-模式]]、[[openspec]]、[[llm-wiki-生态]]
-- 查询页：[[离职交接方案]]
+- [[llm-wiki-pattern]]、[[openspec]]、[[llm-wiki-ecosystem]]
+- 查询页：[[handover-plan]]

@@ -43,6 +43,6 @@ OKF 标准不进 Karpathy llm-wiki 的自然演进：把"约定"变"规范"。�
 
 ## 相关
 
-- 概念：[[llm-wiki-模式]]、[[llm-wiki-生态]]、[[spec-vs-wiki]]
+- 概念：[[llm-wiki-pattern]]、[[llm-wiki-ecosystem]]、[[spec-vs-wiki]]
 - 输出方：[[openwiki]]
 - 附录：`raw/articles/okf-spec.md` 尾部有最小示例包

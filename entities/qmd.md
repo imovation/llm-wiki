@@ -48,5 +48,5 @@ qmd query "部署流程"
 
 ## 相关
 
-- 概念：[[llm-wiki-生态]]（搜索层可选工具）
+- 概念：[[llm-wiki-ecosystem]]（搜索层可选工具）
 - 工具：[[openwiki]]、[[llm-wiki-compiler]]

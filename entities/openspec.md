@@ -35,7 +35,7 @@ confidence: high
 
 ## 与 Spec wiki 的位置
 
-见 [[spec-vs-wiki]]——OpenSpec 是 **spec 层的标准实现**，与 [[llm-wiki-生态]] 的 wiki 层互补。对离职交接场景，它能把"为什么这么做"提炼为决策记录。@^[raw/session-history/2026-07-18-misty-river.md]
+见 [[spec-vs-wiki]]——OpenSpec 是 **spec 层的标准实现**，与 [[llm-wiki-ecosystem]] 的 wiki 层互补。对离职交接场景，它能把"为什么这么做"提炼为决策记录。@^[raw/session-history/2026-07-18-misty-river.md]
 
 ## 相关
 
