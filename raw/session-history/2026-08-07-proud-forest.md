@@ -1,6 +1,6 @@
 ---
 source_url: opencode://session-history/2026-08-07-proud-forest
-title: Session: 读取当前目录与opencode历史
+title: "Session: 读取当前目录与opencode历史"
 ingested: 2026-08-07
 sha256: 02d86b3bfff1fb8991225e9ac53ab774181d6acc3ddadadb799578e963da2899
 ---

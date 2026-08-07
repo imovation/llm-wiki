@@ -1,6 +1,6 @@
 ---
 source_url: opencode://session-history/2026-07-24-playful-cactus
-title: Session: Tree-sitter, LSP, AST, CST, Java ASM 解释
+title: "Session: Tree-sitter, LSP, AST, CST, Java ASM 解释"
 ingested: 2026-08-07
 sha256: 2a8f6c06eb15d5807e84205a4863fe984b2df1a7cf9a4b00e364cb72d1eb12d3
 ---

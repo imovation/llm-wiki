@@ -1,6 +1,6 @@
 ---
 source_url: opencode://session-history/2026-07-20-cosmic-harbor
-title: Session: AI编程工具Comet、OpenWiki、Graphify研究与应用
+title: "Session: AI编程工具Comet、OpenWiki、Graphify研究与应用"
 ingested: 2026-08-07
 sha256: 03a414ab98c74a135cc5fb0c350b45d63ff284880e9da0d00021a5432ace3538
 ---

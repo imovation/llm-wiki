@@ -43,3 +43,9 @@
 - index.md 页数漂移：24 → 25（与实际条目一致）
 - sources 路径漂移：qmd.md、llm-wiki-skill.md 的 raw/ 路径改为 raw/articles/
 - SCHEMA.md 新增「Lint 清单」：sources 路径存在性、index 自动计数、单一来源偏薄等规则（防止同类漂移再发生）
+
+## [2026-08-07] create | 全局 skill + lint 脚本
+- 创建全局 opencode skill `~/.config/opencode/skills/llm-wiki/`：任何目录/会话可触发，内置 WIKI_PATH 与 Ingest/Query/Lint 工作流
+- 实现 `scripts/lint.py`：把 SCHEMA Lint 清单变成可执行工具（断链/孤页/index 完整性/sources 存在性/标签审计/raw sha256 漂移/页面大小）
+- 修复 raw/session-history 6 个文件 frontmatter 的 YAML 引号问题（标题含冒号）
+- lint 结果：29 页，0 问题

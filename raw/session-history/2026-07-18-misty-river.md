@@ -1,6 +1,6 @@
 ---
 source_url: opencode://session-history/2026-07-18-misty-river
-title: Session: Spec是指令，Wiki是知识。
+title: "Session: Spec是指令，Wiki是知识。"
 ingested: 2026-08-07
 sha256: 657f596b6961d9e7f70cb12a02e9334b61c78b1b335bf6993372071b6b549e6c
 ---

@@ -1,6 +1,6 @@
 ---
 source_url: opencode://session-history/2026-07-23-playful-planet
-title: Session: 软件工程全生命周期完整文档
+title: "Session: 软件工程全生命周期完整文档"
 ingested: 2026-08-07
 sha256: 0f8eb06eee1e7d62644acd47859bc11fd3b664a4b6188c591241cd3eb27bf249
 ---

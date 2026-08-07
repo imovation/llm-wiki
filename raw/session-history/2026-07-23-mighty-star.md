@@ -1,6 +1,6 @@
 ---
 source_url: opencode://session-history/2026-07-23-mighty-star
-title: Session: OpenWiki+Graphify+CodeGraph
+title: "Session: OpenWiki+Graphify+CodeGraph"
 ingested: 2026-08-07
 sha256: 7718378494af775ac2e87250f76e1d40e52f18057c7a255189ffb0f3375a8c9f
 ---
