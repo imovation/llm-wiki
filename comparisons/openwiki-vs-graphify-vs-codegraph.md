@@ -57,3 +57,4 @@ CodeGraph:  Agent 需要精确上下文 → 我给 Surgical Context
 
 - 实体：[[openwiki]]、[[graphify]]、[[codegraph]]
 - 概念：[[llm-wiki-ecosystem]]、[[tree-sitter]]
+- 详细对比：[[graphify-vs-codegraph]]（Graphify ↔ CodeGraph 专项）

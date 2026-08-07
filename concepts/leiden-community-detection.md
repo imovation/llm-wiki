@@ -34,4 +34,4 @@ confidence: high
 
 ## 相关
 
-- [[god-node-analysis]]（同属图分析）、[[graphify]]、[[nashsu-llm-wiki]]、[[tree-sitter]]
+- [[louvain-community-detection]]（前身算法）、[[god-node-analysis]]（同属图分析）、[[graphify]]、[[nashsu-llm-wiki]]、[[tree-sitter]]

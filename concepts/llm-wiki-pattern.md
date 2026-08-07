@@ -44,13 +44,22 @@ LLM Wiki 不同：
 
 维护知识库的瓶颈是**记账**（交叉引用、保持更新、记录矛盾、一致性），人类因维护成本增长而放弃，LLM 不会厌倦/忘记，一次可触及 15 文件，**维护成本趋近零**。与 Vannevar Bush 的 Memex（1945）精神相通。
 
+## 实操技巧（来自 Karpathy 原文）
+
+- **Obsidian Web Clipper**：浏览器扩展，把网页文章快速转成 Markdown 丢进 raw 集合
+- **本地下载图片**：Obsidian 设置 → 附件路径固定 `raw/assets/`；绑定"Download attachments"快捷键（如 Ctrl+Shift+D），剪藏后一键把图片落盘——LLM 可直接看图而不是依赖会失效的 URL。注意 LLM 无法一次读内联图片 markdown，需先读文本再单独看图
+- **图谱视图**：Obsidian 图谱是看 wiki 全貌的最佳方式——谁是枢纽、谁是孤岛一目了然
+- **Marp**：Markdown 幻灯片格式，Obsidian 有插件，可直接从 wiki 内容生成演示
+- **Dataview**：对页面 frontmatter 跑查询，自动生成动态表格/列表（前提：LLM 写 frontmatter）
+- **CLI 工具**：wiki 变大后可加搜索（[[qmd]] 混合搜索 BM25+向量+LLM 重排，有 CLI 也有 MCP），或 vibe-code 一个简单搜索脚本
+- **git 仓库**：wiki 只是 md 文件，git 免费提供版本历史、分支、协作 `^[raw/articles/llm-wiki.md]`
+
 ## 可选工具
 
 - 搜索（wiki 变大后）：[[qmd]]
-- Obsidian Web Clipper 剪藏；本地下载图片；图谱视图；Marp 幻灯片；Dataview
 - 本模式的各种实现见 [[llm-wiki-ecosystem]]
 
 ## 相关
 
 - 概念：[[llm-wiki-ecosystem]]、[[okf]]、[[spec-vs-wiki]]、[[three-layer-architecture]]
-- 工具：[[llm-wiki-skill]]（agent 操作手册）、[[nashsu-llm-wiki]]
+- 工具：[[llm-wiki-skill]]（agent 操作手册）、[[nashsu-llm-wiki]]、[[qmd]]

@@ -75,7 +75,7 @@ sha256:
 1. **断链**：`[[wikilink]]` 目标页不存在
 2. **孤页**：无入向 `[[wikilink]]` 的页面
 3. **index 完整性**：每个 wiki 页都在 index.md；index 头部「总页面数」必须与实际条目数一致（由 index 条目自动计数，禁止手工数字）
-4. **frontmatter**：必填字段齐全；标签在分类法内
+4. **frontmatter**：必填字段齐全；标签在分类法内；`type` 取值合法（entity/concept/comparison/query/schema/summary）；`updated ≥ created`；`contested`/`contradictions` 页面列出供审查
 5. **sources 路径**：每页 `sources:` 中每条 raw 路径必须在 `raw/` 下真实存在（`raw/` vs `raw/articles/` 的错位是已知腐化点）
 6. **过期内容**：`updated` 早于 90 天且被新来源提及
 7. **矛盾**：`contested: true` / `contradictions:` 页面列出

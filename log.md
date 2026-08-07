@@ -49,3 +49,16 @@
 - 实现 `scripts/lint.py`：把 SCHEMA Lint 清单变成可执行工具（断链/孤页/index 完整性/sources 存在性/标签审计/raw sha256 漂移/页面大小）
 - 修复 raw/session-history 6 个文件 frontmatter 的 YAML 引号问题（标题含冒号）
 - lint 结果：29 页，0 问题
+
+## [2026-08-07] delete | 全局 skill 移除
+- 该 skill 定位反复后确认只需服务本项目 → 交付由 AGENTS.md（项目内）承担
+- 删除 ~/.config/opencode/skills/llm-wiki/，从 ~/.profile 移除 WIKI_PATH 导出
+- wiki/scripts/lint.py 保留（仓库自足），供任何接手 agent 使用
+
+## [2026-08-07] create | 内容补齐（体检后优化）
+- 新建 [[louvain-community-detection]]：nashsu 图谱的 Louvain vs Graphify 的 Leiden 对比；index 26 页
+- llm-wiki-pattern 补「实操技巧」小节（Web Clipper/本地图片/Marp/Dataview/CLI/git），来源 raw/articles/llm-wiki.md
+- openwiki-vs-graphify-vs-codegraph 追加指向 graphify-vs-codegraph 的专家链接
+- Mermaid/FTS5 已在原页覆盖（无需新建）；lint.py 增强：type 枚举/created≤updated/contested 审查
+- SCHEMA.md 同步 Lint 清单 #4
+- lint：30 页 0 问题

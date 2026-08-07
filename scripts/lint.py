@@ -86,6 +86,7 @@ def main():
         issues.append(f"INDEX-DRIFT declared={declared.group(1)} actual={n_entries}")
 
     # 4. frontmatter validation
+    VALID_TYPES = {"entity", "concept", "comparison", "query", "schema", "summary"}
     for slug, path in sorted(pages.items()):
         if slug in CONFIG_SLUGS:
             continue
@@ -96,6 +97,14 @@ def main():
         miss = [k for k in ("title", "created", "updated", "type", "tags", "sources") if k not in data]
         if miss:
             issues.append(f"FM-MISS {path}: {miss}")
+        t = data.get("type")
+        if t and t not in VALID_TYPES:
+            issues.append(f"BAD-TYPE {path}: {t}")
+        c, u = data.get("created"), data.get("updated")
+        if c and u and u < c:
+            issues.append(f"DATE-INVERSION {path}: {c} -> {u}")
+        if data.get("contested") is True or data.get("contradictions"):
+            issues.append(f"CONTESTED {path}: review needed")
 
     # 5. sources path existence
     for slug, path in sorted(pages.items()):

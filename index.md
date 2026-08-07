@@ -2,7 +2,7 @@
 
 > 内容目录。每个 wiki 页面在其类型下列出，附一行摘要。
 > 首先阅读此文件以找到与任何查询相关的页面。
-> 最后更新：2026-08-07 | 总页面数：25
+> 最后更新：2026-08-07 | 总页面数：26
 
 ## 实体
 
@@ -25,6 +25,7 @@
 - [[cst-vs-ast]] - 具体语法树 vs 抽象语法树（tree-sitter 产出 CST）。
 - [[god-node-analysis]] - 介数中心性最高的"神节点"，代码库核心模块定位。
 - [[leiden-community-detection]] - 图聚类算法（Louvain 改进版），自动分社区。
+- [[louvain-community-detection]] - 经典图聚类算法，nashsu llm_wiki 知识图谱的社区发现。
 - [[llm-wiki-ecosystem]] - LLM Wiki 模式的工具/规范/变体全景图。
 - [[llm-wiki-pattern]] - Karpathy 的核心模式：增量构建持久 wiki（vs RAG）。
 - [[lsp]] - Language Server Protocol：编辑器与语言服务器间的标准协议。

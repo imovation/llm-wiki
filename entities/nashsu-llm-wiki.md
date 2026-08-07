@@ -24,7 +24,7 @@ confidence: medium
    - SHA256 增量缓存 + 持久化摄入队列 + 崩溃恢复
 2. **知识图谱（最独特）**
    - 4 信号相关模型：直接链接(×3) + 来源重叠(×4) + Adamic-Adar(×1.5) + 类型亲和(×1.0)
-   - **Louvain 社区发现**（与 [[graphify]] 的 Leiden 同为社区发现算法，见 [[leiden-community-detection]]）
+   - **Louvain 社区发现**（与 [[graphify]] 的 [[leiden-community-detection]] 同族，见 [[louvain-community-detection]]）
    - 图谱洞察：自动检测"意外关联"与"知识缺口"，点击触发 Deep Research
    - sigma.js + ForceAtlas2 力导向渲染
 3. **多格式文档解析**：PDF（pdf-extract + 可选 MinerU）、DOCX、PPTX、XLSX、EPUB/MOBI、图片、音视频、网页剪藏
