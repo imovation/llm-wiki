@@ -17,6 +17,7 @@
 - `raw/` — 不可变原始来源（含 sha256）。**只读，从不修改**
 - `entities/ concepts/ comparisons/ queries/` — agent 全权拥有的 wiki 页面
 - `SCHEMA.md` — 约束一切行为的规则文档（人+agent 共同演进）
+- `README.md` — 仓库门面（非内容页，lint 豁免 frontmatter/index 要求）
 
 ## 核心约定
 

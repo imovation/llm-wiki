@@ -62,3 +62,9 @@
 - Mermaid/FTS5 已在原页覆盖（无需新建）；lint.py 增强：type 枚举/created≤updated/contested 审查
 - SCHEMA.md 同步 Lint 清单 #4
 - lint：30 页 0 问题
+
+## [2026-08-07] create | README 门面
+- 新增 README.md：仓库门面（项目简介、三层结构、快速开始、内容全景、维护理念）
+- lint.py 将 readme 纳入 CONFIG_SLUGS（豁免 frontmatter/index 要求）
+- AGENTS.md 记录 README 的豁免地位
+- lint：31 页 0 问题

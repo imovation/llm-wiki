@@ -13,7 +13,7 @@ import yaml
 
 WIKI = os.path.abspath(sys.argv[1] if len(sys.argv) > 1 else os.path.dirname(os.path.dirname(__file__)))
 SKIP_DIRS = (".obsidian", "raw", ".git", "node_modules", "_archive")
-CONFIG_SLUGS = ("index", "log", "schema", "agents")
+CONFIG_SLUGS = ("index", "log", "schema", "agents", "readme")
 FM_RE = re.compile(r"^---\n(.*?)\n---", re.S)
 LINK_RE = re.compile(r"\[\[([^\]|#]*?)(?:\|[^\]]*)?\]\]")
 
