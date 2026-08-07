@@ -4,7 +4,7 @@ created: 2026-08-07
 updated: 2026-08-07
 type: entity
 tags: [qmd, knowledge-base, cli, search]
-sources: [raw/session-history/2026-07-18-misty-river.md, raw/llm-wiki.md, raw/llm-wiki.zh.md]
+sources: [raw/session-history/2026-07-18-misty-river.md, raw/articles/llm-wiki.md, raw/articles/llm-wiki.zh.md]
 confidence: high
 ---
 

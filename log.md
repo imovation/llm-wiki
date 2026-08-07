@@ -30,3 +30,16 @@
 
 ## [2026-08-07] lint | 0 个问题
 - 全量 wikilink 校验通过；修复若干候选链接与大小写（LSP→lsp）
+
+## [2026-08-07] create | AGENTS.md 入口
+- 项目根新增 AGENTS.md：指向 SCHEMA/index/log，规约每次会话先定位
+- 使任何未来 agent 会话自动获得「纪律性维护员」身份
+
+## [2026-08-07] query | 入职演练（新 agent 接管演练）
+- 用全新 explore agent 模拟"只凭 wiki 接管"：零会话历史、唯一信息源是项目文件
+- 结果成功：13 个文件内自足回答「spec-vs-wiki」与「离职交接产物」，逐句带 wikilink 溯源
+
+## [2026-08-07] update | 演练发现的 3 处缺口修复
+- index.md 页数漂移：24 → 25（与实际条目一致）
+- sources 路径漂移：qmd.md、llm-wiki-skill.md 的 raw/ 路径改为 raw/articles/
+- SCHEMA.md 新增「Lint 清单」：sources 路径存在性、index 自动计数、单一来源偏薄等规则（防止同类漂移再发生）

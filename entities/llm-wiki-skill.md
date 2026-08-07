@@ -4,7 +4,7 @@ created: 2026-08-07
 updated: 2026-08-07
 type: entity
 tags: [hermes-skill, knowledge-base, skill]
-sources: [raw/SKILL.md, raw/SKILL.zh.md]
+sources: [raw/articles/SKILL.md, raw/articles/SKILL.zh.md]
 confidence: high
 ---
 

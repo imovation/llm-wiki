@@ -70,6 +70,19 @@ sha256:
 - 超过约 200 行则拆分
 - 完全被取代则归档到 `_archive/`
 
+## Lint 清单（触发：用户要求 lint / 维护时定期 / 关键动作后）
+
+1. **断链**：`[[wikilink]]` 目标页不存在
+2. **孤页**：无入向 `[[wikilink]]` 的页面
+3. **index 完整性**：每个 wiki 页都在 index.md；index 头部「总页面数」必须与实际条目数一致（由 index 条目自动计数，禁止手工数字）
+4. **frontmatter**：必填字段齐全；标签在分类法内
+5. **sources 路径**：每页 `sources:` 中每条 raw 路径必须在 `raw/` 下真实存在（`raw/` vs `raw/articles/` 的错位是已知腐化点）
+6. **过期内容**：`updated` 早于 90 天且被新来源提及
+7. **矛盾**：`contested: true` / `contradictions:` 页面列出
+8. **来源漂移**：raw/ 的 sha256 与 frontmatter 不符
+9. **页面大小**：>200 行
+10. **单一来源偏薄**：重要结论只有 1 个 `sources:` 且未设 confidence——提示补证或降级 confidence
+
 ## 实体页面（entities/）
 每个项目/工具：概述、关键事实、唯一能力、与其他工具的关系、来源
 
