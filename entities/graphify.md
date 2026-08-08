@@ -4,13 +4,13 @@ created: 2026-08-07
 updated: 2026-08-08
 type: entity
 tags: [graphify, knowledge-base, cli]
-sources: [raw/session-history/2026-07-18-misty-river.md, raw/session-history/2026-07-20-cosmic-harbor.md, raw/session-history/2026-07-23-mighty-star.md, raw/releases/tool-updates-2026-08.md]
+sources: [raw/session-history/2026-07-18-misty-river.md, raw/session-history/2026-07-20-cosmic-harbor.md, raw/session-history/2026-07-23-mighty-star.md, raw/releases/tool-updates-2026-08.md, raw/releases/updates-2026-08-08.md]
 confidence: high
 ---
 
 # Graphify
 
-[Graphify-Labs/graphify](https://github.com/Graphify-Labs/graphify)（作者 Safi Shamsi，YC S26）的**开源代码知识图谱工具**（Python，Apache-2.0 + MIT）。约 104k star（2026-08）、1.2M+ PyPI 下载，最新 v0.9.35（2026-08-06，迭代高频）。将整个代码库（代码/文档/PDF/图片/视频/SQL/Terraform）转化为可查询的**知识图谱**，让 agent 以图查询替代 grep。^[raw/session-history/2026-07-23-mighty-star.md] ^[raw/releases/tool-updates-2026-08.md]
+[Graphify-Labs/graphify](https://github.com/Graphify-Labs/graphify)（作者 Safi Shamsi，YC S26）的**开源代码知识图谱工具**（Python，Apache-2.0 + MIT）。约 104k star（2026-08）、1.2M+ PyPI 下载，最新 v0.9.36（2026-08-07，迭代高频）。将整个代码库（代码/文档/PDF/图片/视频/SQL/Terraform）转化为可查询的**知识图谱**，让 agent 以图查询替代 grep。^[raw/session-history/2026-07-23-mighty-star.md] ^[raw/releases/tool-updates-2026-08.md]
 
 ## 是什么
 
@@ -44,6 +44,10 @@ graphify path "UserService" "DatabasePool"
 detect() → extract() → build_graph() → cluster() → analyze() → report() → export()
 ```
 独立模块、无共享状态，Python dict + NetworkX 图通信。
+
+## 版本动态
+
+- **v0.9.36（2026-08-07，correctness 版）**：修复 4 处静默失败（`cluster-only` 忽略 `--backend`/`--model`/`--batch-size` 时告警、community-label 提示词与丢弃哨兵不再冲突、`tree --root` 根无匹配时非零退出、`cluster-only` 从分析图中盖 `built_at_commit`）；Swift 跨文件 `extension` 不再丢调用边；node-id 冲突消解改为确定性（生命周期罚分 + 路径段逆序平局）；Windows skill 改用 PowerShell 可运行。^[raw/releases/updates-2026-08-08.md]
 
 ## 相关
 

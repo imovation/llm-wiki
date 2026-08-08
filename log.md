@@ -105,3 +105,9 @@
 - lint.py 将 readme 纳入 CONFIG_SLUGS（豁免 frontmatter/index 要求）
 - AGENTS.md 记录 README 的豁免地位
 - lint：31 页 0 问题
+
+## [2026-08-08] ingest | Graphify v0.9.35 → v0.9.36 更新
+- cron 检测 raw/releases/updates-2026-08-08.md（sha256 已落盘）
+- entities/graphify.md：正文版本更新为 v0.9.36（2026-08-07），新增「版本动态」小节（correctness 修复四点：静默失败告警、Swift 跨文件 extension 调用边、node-id 确定性冲突消解、Windows skill PowerShell），sources 追加 updates-2026-08-08.md
+- index.md：graphify 摘要版本号同步 v0.9.36
+- lint：通过

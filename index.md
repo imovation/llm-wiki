@@ -10,7 +10,7 @@
 
 - [[codegraph]] - 本地优先代码智能工具，Rust 内核 + SQLite/FTS5，surgical context。
 - [[comet]] - Agent Skill 平台 + 可恢复长任务工作流（五阶段状态机）。
-- [[graphify]] - 多模态代码知识图谱（Leiden 社区 + God Node + 边置信度，v0.9.35）。
+- [[graphify]] - 多模态代码知识图谱（Leiden 社区 + God Node + 边置信度，v0.9.36）。
 - [[langsmith]] - LLM 应用可观测性平台（tracing/eval/prompt 管理）。
 - [[llm-wiki-compiler]] - Karpathy 模式的 CLI/SDK 编译器，两阶段 LLM 管线 + 生命周期门控。
 - [[llm-wiki-skill]] - Hermes Agent 内置 llm-wiki skill v2.1.0（本 wiki 施工手册）。
