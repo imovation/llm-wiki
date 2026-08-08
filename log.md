@@ -5,6 +5,11 @@
 > 动作：ingest, update, query, lint, create, archive, delete
 > 当此文件超过 500 条记录时，轮换：重命名为 log-YYYY.md，重新开始。
 
+## [2026-08-08] create | OpenWiki 使用说明归档
+- 新增 queries/openwiki-usage.md（安装/命令/两模式工作流/CI/模型调试/局限，引用 07-18、07-23 两会话 + changelog）
+- index.md 查询章节登记，页数 26→27（lint 校验通过）
+- lint：32 页 0 问题
+
 ## [2026-08-08] update | openwiki 实体页架构细化
 - 架构小节扩充：写保护设计（write guard/`..` 穿越拒绝、markers 保留 agent 指令、并发保存序列化）、输出卫生（内容块不泄漏、connector 超时/重试退避、telemetry 如实上报）、扩展性（agent graph factory、OPENAI_BASE_URL/gateway 路由）
 - 版本表补全 0.2.1–0.2.3 行（向导重构、Gemini 新 provider、Mermaid 生成）
