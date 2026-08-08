@@ -3,11 +3,19 @@
 # cron 入口。流程：
 #   1. check_updates.py 检测最新版本
 #   2. 有更新（exit 1）→ 调 opencode run 让 agent 按 SCHEMA Ingest 流程处理
-#   3. 摄取完成 → git 自动提交
+#   3. 摄取完成 → git 自动提交 + 推送
 #   4. 无更新 → 静默退出
 set -u
 WIKI="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 cd "$WIKI" || exit 2
+
+# cron 环境修正：PATH 补齐；代理透传（本机走 clash 127.0.0.1:7897）
+export PATH="/home/imovation/.nvm/versions/node/v24.14.0/bin:/usr/local/bin:/usr/bin:/bin"
+: "${http_proxy:=http://127.0.0.1:7897/}"
+: "${https_proxy:=http://127.0.0.1:7897/}"
+: "${all_proxy:=socks://127.0.0.1:7897/}"
+export http_proxy https_proxy ALL_PROXY
+unset no_proxy NO_PROXY
 
 LOGFILE="$WIKI/raw/releases/.auto-ingest.log"
 stamp() { date '+%Y-%m-%d %H:%M:%S'; }
@@ -68,10 +76,10 @@ commit_auto() {
     echo "$(stamp) commit failed" >> "$LOGFILE"
   fi
   if git remote -v | grep -q origin; then
-    if git push origin main >/dev/null 2>&1; then
+    if timeout 60 git push origin main >/dev/null 2>&1; then
       echo "$(stamp) pushed to origin" >> "$LOGFILE"
     else
-      echo "$(stamp) push failed (remote may be unavailable)" >> "$LOGFILE"
+      echo "$(stamp) push failed (timeout/network — retry next run)" >> "$LOGFILE"
     fi
   fi
 }
