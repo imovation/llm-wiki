@@ -67,5 +67,12 @@ commit_auto() {
   else
     echo "$(stamp) commit failed" >> "$LOGFILE"
   fi
+  if git remote -v | grep -q origin; then
+    if git push origin main >/dev/null 2>&1; then
+      echo "$(stamp) pushed to origin" >> "$LOGFILE"
+    else
+      echo "$(stamp) push failed (remote may be unavailable)" >> "$LOGFILE"
+    fi
+  fi
 }
 commit_auto

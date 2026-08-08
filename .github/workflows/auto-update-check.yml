@@ -1,0 +1,48 @@
+name: auto-update-check
+
+on:
+  schedule:
+    - cron: "30 1 * * *"
+  workflow_dispatch:
+
+permissions:
+  issues: write
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Run update check
+        id: check
+        run: |
+          python3 scripts/check_updates.py --dry-run > /tmp/check.out 2>&1 || true
+          RELEASES_DONE=$(ls "raw/releases"/updates-*.md 2>/dev/null | tail -1 || true)
+          echo "releases_dir_status: $RELEASES_DONE"
+          echo "dry_run_output:"
+          cat /tmp/check.out
+          # 若检测有搭置更新但 raw/releases 最近一天内无新更新文件 → 需要人工/本地 cron 处理
+          if grep -q "updates" /tmp/check.out; then
+            echo "has_updates=yes" >> "$GITHUB_OUTPUT"
+          else
+            echo "has_updates=no" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Open issue if updates pending
+        if: steps.check.outputs.has_updates == 'yes'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const body = `本地 cron 应已自动摄取（auto_ingest.sh）。若此 issue 出现，说明本地机制未按时运行或有手动同步需求。`;
+            const { data: issues } = await github.rest.issues.listForRepo({ owner: context.repo.owner, repo: context.repo.repo, state: 'open' });
+            const existing = issues.some(i => i.title.includes('pending tool updates'));
+            if (!existing) {
+              await github.rest.issues.create({
+                owner: context.repo.owner, repo: context.repo.repo,
+                title: 'pending tool updates',
+                body: '脚本检测到工具更新但 raw/releases 未同步。请检查本地 cron / auto_ingest.sh。'
+              });
+            }
