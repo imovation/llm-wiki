@@ -4,7 +4,7 @@ created: 2026-08-07
 updated: 2026-08-08
 type: entity
 tags: [openwiki, knowledge-base, cli]
-sources: [raw/session-history/2026-07-18-misty-river.md, raw/session-history/2026-07-20-cosmic-harbor.md, raw/session-history/2026-07-23-mighty-star.md, raw/releases/openwiki-changelog-2026-08.md]
+sources: [raw/session-history/2026-07-18-misty-river.md, raw/session-history/2026-07-20-cosmic-harbor.md, raw/session-history/2026-07-23-mighty-star.md, raw/releases/openwiki-changelog-2026-08.md, raw/articles/openwiki-readme.md]
 confidence: high
 ---
 
@@ -25,18 +25,20 @@ LangChain（[langchain-ai](https://github.com/langchain-ai/openwiki)）开源的
 
 ## 关键特性
 
-- **Agent-first**：生成 `AGENTS.md`/`CLAUDE.md` 中的 `# OPENWIKI:START` 块，引导 agent 先查 wiki
-- **双向同步/CI**：GitHub Actions、GitLab CI、Bitbucket Pipeline 自动跑更新并提 PR
-- **Mermaid 原生支持**：序列图、ER 图、状态图，带验证-降级-修复回路（v0.2.3 起）
-- **原生 wiki 可视化器**（v0.2.5）：本地可视化 wiki 结构，无需外挂工具
-- **`.openwikiignore`**（v0.2.5）：文档运行时可排除指定路径
+- **Agent-first**：维护 `AGENTS.md`/`CLAUDE.md` 中的 `<!-- OPENWIKI:START -->` 块（只重写该块）；`openwiki/INSTRUCTIONS.md` 用户指令只读取不覆写（v0.3.0 起 agent 提示可选/按需）
+- **双向同步/CI**：GitHub Actions、GitLab CI、Bitbucket Pipeline 自动跑更新并提 PR；**no-op 免费**——每次运行快照 `openwiki/` 目录，仅在真有变更时记录新元数据，调度 CI 不空转
+- **Mermaid 原生支持**（v0.2.3）：序列/ER/状态/流程图；默认零依赖轻量校验，可 `npm install mermaid jsdom` 权威校验（与 GitHub 渲染一致）；失败降级为 text fence+注释，下次 `--update` 修复
+- **原生 wiki 可视化器**（v0.2.5）：`openwiki visualize` 把 wiki 变成交互式节点图 + 侧边 Markdown 阅读器；loopback 127.0.0.1（默认端口 4321 自增，`--port`/`--no-open`）；图谱/Markdown 库走公共 CDN（需联网）
+- **`.openwikiignore`**（v0.2.5）：gitignore 风格（注释/`*`/`**`/目录/`!` 否定）；语义是**读边界**——忽略路径永不读取/扫描/复现（不保证不提及）
 - **内部链接验证**（v0.3.0）：生成后校验 wiki 内部链接，v0.3.1 修复误报
-- **输出兼容 [[okf]] v0.1 规范**：YAML frontmatter 标记文档类型；frontmatter validator + index.md 中间件（v0.2.0）
+- **输出兼容 [[okf]] v0.1 规范**（v0.2.0）：frontmatter 仅 `type` 必填；根 index 声明 `okf_version: "0.1"`；合法 timestamp/扩展字段跨更新与迁移保留
 - **`log.md` 更新日志**：每次运行生成，记录变更文件与位置（v0.2.0 OKF 化）
-- **匿名 CLI telemetry**（v0.2.0）：run 事件遥测，可拒绝/超时上报
-- **Built-in 连接器**（Personal 模式）：git-repo、Gmail、Notion、X、Web Search（Tavily）、Hackernews、Slack、MCP；LangSmith connector（v0.2.4)；同一连接器可配多个实例（如多个不同主题的 web-search），原始数据落 `~/.openwiki/connectors/<name>/raw/`
-- **多模型供应商**：OpenAI、Anthropic、Gemini（含 Vertex/Gemini Enterprise）、Bedrock、Ollama、OpenRouter、NVIDIA NIM、Nebius、GitHub Copilot 等（v0.2.x 持续扩充）
-- **多语言输出**（v0.2.4）：wiki agent 支持非英语输出
+- **匿名 telemetry**（v0.2.0）：单 `openwiki_run` 事件（命令/成败/粗粒度错误类）；从不收集文件内容/凭据/提示词/输出/IP；`OPENWIKI_TELEMETRY_DISABLED=1` 或 `DO_NOT_TRACK=1` 关闭；`--telemetry-file=` 查看将上报内容；对话/CI 不计作品安装
+- **Built-in 连接器**（Personal 模式）：git-repo、Gmail、Notion、X、Web Search（Tavily）、Hackernews、Slack、MCP；同一连接器可配多实例（`web-search-1/2`），原始数据落 `~/.openwiki/connectors/<name>/raw/`；`openwiki auth <provider>` 本地浏览器 OAuth（token 存 `~/.openwiki/.env`）、`auth configure/tools` 进阶重试、`openwiki ngrok start` 为 Slack OAuth 开隧道（自动写 `OPENWIKI_HTTPS_OAUTH_REDIRECT_URI`）
+- **LangSmith connector**（v0.2.4，**code 模式**）：拉近期 trace（工具调用/结果/延迟）入代码 wiki，文档反映真实运行时行为；配置写入提交版 `openwiki/.langsmith.json`（只含 workspace/project 名，不含 key）；key 从 `OPENWIKI_LANGSMITH_API_KEY` 读，多 workspace 用 `_2`/`_3` 后缀，仅官方 US/EU 端点
+- **12 个模型供应商**：OpenAI（`gpt-5.6-terra` 默认）/ChatGPT 登录（`openai-chatgpt` 走 Codex 后端，用订阅额度）/Anthropic/Gemini/Vertex（Model Garden 含 Claude 与伙伴模型，ADC 免 key）/Bedrock（IAM）/GitHub Copilot（`COPILOT_API_KEY` 需 OAuth token，PAT 被拒）/OpenRouter（`OPENWIKI_OPENROUTER_PROVIDER_ONLY` 可 pin 上游）/Nebius/NVIDIA NIM/OpenAI 兼容（Ollama 等）；base URL 族 env（`ANTHROPIC_BASE_URL` 等）+ 重试次数 `OPENWIKI_PROVIDER_RETRY_ATTEMPTS`（默认 3）
+- **多语言输出**（v0.2.4）：`--language <locale>` 生成指定语言，代码/标识符保持规范
+- **交互聊天**：运行后保持对话（`/api-key`、`/langsmith-key` 命令）；`-p`/`--print` 一次性打印退出；`--init`/`--update` 交互终端下成功自动退出
 
 ## 版本（截至 2026-08）
 
@@ -69,7 +71,21 @@ OpenWiki 自带「**定时重跑 + PR**」式更新，与本 wiki 的「**感知
 | 覆盖 | 单一仓库/个人知识源 | 生态 8 个工具全监控 |
 | 保留 | CI 配置（GitHub Actions / GitLab CI / Bitbucket Pipeline） | cron + `tracked-projects.json` |
 
-Personal 模式另有 LaunchAgent 定时调度（日志落 `~/.openwiki/logs/`）。两种机制可互补：本 wiki 用感知触发避免盲跑噪声。
+Personal 模式另有 LaunchAgent 定时调度（日志落 `~/.openwiki/logs/`）。两种机制可互补：本 wiki 用感知触发避免盲跑噪声。补充：no-op 快照机制让 OpenWiki 的盲跑不产生 git 噪音（见上「关键特性」）。
+
+## 命令快览
+
+| 命令 | 说明 |
+|---|---|
+| `openwiki` / `openwiki personal` | 交互聊天会话（code/personal） |
+| `openwiki "generate docs"` | 带初始指令进入 |
+| `openwiki -p "what can you do?"` | 一次性会话，打印后退出（`--print`） |
+| `openwiki --init/--update` | code 模式初始化/更新（personal 加 positional） |
+| `openwiki visualize [dir] --port N --no-open` | 可视化节点图 |
+| `openwiki auth <provider>\|configure\|tools` | 连接器认证（浏览器 OAuth）与进阶重试 |
+| `openwiki ingest all\|<connector>` | 手动运行连接器摄取 |
+| `openwiki ngrok start [domain]` | Slack OAuth 反向隧道 |
+| `openwiki --help` | 完整帮助 |
 
 ## 与同类的关系
 

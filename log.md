@@ -5,6 +5,12 @@
 > 动作：ingest, update, query, lint, create, archive, delete
 > 当此文件超过 500 条记录时，轮换：重命名为 log-YYYY.md，重新开始。
 
+## [2026-08-08] ingest | OpenWiki 仓库 README 摄入
+- 新增 raw/articles/openwiki-readme.md（github README 快照，body sha256 落盘，3-mode/12-provider 等新事实）
+- entities/openwiki.md：特性 16 条重写（visualize 命令/`.openwikiignore` 读边界/no-op 快照/OKF detail/telemetry 精确边界/LangSmith connector code 模式细节/12 provider/OpenAI-ChatGPT Codex 后端/OpenRouter pinning/Windows bun 提示），新增「命令快览」表（openwiki/`-p`/ingest/auth/ngrok/visualize）
+- queries/openwiki-usage.md 同步新命令集与配置细节
+- index.md 摘要不动；log 追加；lint 待跑
+
 ## [2026-08-08] create | OpenWiki 使用说明归档
 - 新增 queries/openwiki-usage.md（安装/命令/两模式工作流/CI/模型调试/局限，引用 07-18、07-23 两会话 + changelog）
 - index.md 查询章节登记，页数 26→27（lint 校验通过）
