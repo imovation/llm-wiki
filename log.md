@@ -20,6 +20,12 @@
 - 有版本更新：nashsu v0.6.7（08-02）、openspec 1.8.0（08-05）、graphify v0.9.35 + star 94k→104k、codegraph v1.5.0 Rust 引擎、compiler v1.1.0、qmd v2.6.3、comet 0.4.0-beta.14（Native 工作流/dashboard/eval）
 - 无更新：hermes llm-wiki skill（v2.1.0）、langsmith（SaaS）
 
+## [2026-08-08] update | 自动 lint 机制（GHA 每日巡检）
+- 用户问询后确认补：SCHEMA.md lint 触发场景本含「维护时定期」，此前只实现了「关键动作后」
+- auto-update-check.yml 新增 lint job：每日跑 scripts/lint.py，非零退出时开 issue（'lint: knowledge base issues'，去重）；不占本地资源
+- 本地 cron 不重复加（避免双跑）；修复 github-script 变量笔误
+- 至此三通道齐备：本地摄取门禁（已有）、GHA 版本检测（已有）、GHA 每日 lint 巡检（新增）
+
 ## [2026-08-08] update | 内容质量体检
 - 孤儿源清零：2026-07-23-playful-planet（文档体系问答）→ spec-vs-wiki 传统文档分类表补充溯源；2026-08-07-proud-forest（本 wiki 搭建决策）→ llm-wiki-pattern 新增「元应用」小节 + llm-wiki-ecosystem 新增「选型经验」小节
 - 单源页面审查：6 页均已有 confidence（SCHEMA #10 合规，不需降级）
