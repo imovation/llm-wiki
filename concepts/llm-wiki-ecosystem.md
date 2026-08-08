@@ -1,10 +1,10 @@
 ---
 title: LLM Wiki 生态
 created: 2026-08-07
-updated: 2026-08-07
+updated: 2026-08-08
 type: concept
 tags: [llm-wiki, knowledge-base, ecosystem]
-sources: [raw/articles/llm-wiki.md, raw/session-history/2026-07-18-misty-river.md, raw/session-history/2026-07-23-mighty-star.md]
+sources: [raw/articles/llm-wiki.md, raw/session-history/2026-07-18-misty-river.md, raw/session-history/2026-07-23-mighty-star.md, raw/session-history/2026-08-07-proud-forest.md]
 confidence: medium
 ---
 
@@ -40,6 +40,10 @@ Graphify（理解）→ OpenWiki（记录）→ Comet（执行+评估）
 - 规范层：[[okf]]
 - 流程指令层：[[openspec]]（spec）、[[comet]]（执行编排）
 - 观测：[[langsmith]]
+
+## 选型经验（2026-08-07 本 wiki 搭建决策）
+
+小规模元知识库（数十页级）的实际选型：**不需要重型工具**——图谱工具管代码库、compiler 取代 agent 判断、桌面 App 与 Obsidian+agent 重复；选择「opencode + Skill 方法论」就地维护。^[raw/session-history/2026-08-07-proud-forest.md] 工具真正上场的情景：代码库理解（graphify/codegraph）、批量编译（compiler）、桌面多源聚合（nashsu）、wiki 规模扩大后搜索（qmd）。
 
 ## 应用场景
 

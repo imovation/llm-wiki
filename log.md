@@ -20,6 +20,16 @@
 - 有版本更新：nashsu v0.6.7（08-02）、openspec 1.8.0（08-05）、graphify v0.9.35 + star 94k→104k、codegraph v1.5.0 Rust 引擎、compiler v1.1.0、qmd v2.6.3、comet 0.4.0-beta.14（Native 工作流/dashboard/eval）
 - 无更新：hermes llm-wiki skill（v2.1.0）、langsmith（SaaS）
 
+## [2026-08-08] update | 内容质量体检
+- 孤儿源清零：2026-07-23-playful-planet（文档体系问答）→ spec-vs-wiki 传统文档分类表补充溯源；2026-08-07-proud-forest（本 wiki 搭建决策）→ llm-wiki-pattern 新增「元应用」小节 + llm-wiki-ecosystem 新增「选型经验」小节
+- 单源页面审查：6 页均已有 confidence（SCHEMA #10 合规，不需降级）
+- 无矛盾/contested 标记；lint：31 页 0 问题
+
+## [2026-08-08] create | 远程仓库 + CI 兜底
+- 关联现有公开仓库 imovation/llm-wiki 为 origin，main 已推送
+- auto_ingest.sh 摄取提交后自动 push origin
+- 新增 .github/workflows/auto-update-check.yml：GitHub Actions 每日检测上游版本，若本地 cron 未同步则开 issue 提醒（双保险）
+
 ## [2026-08-08] update | 追踪清单修复 + 端到端演练
 - check_updates.py 新增 github-tags / raw（远端文件抓 frontmatter version）两种类型
 - tracked-projects.json：qmd 由 npm 改 github-tags（npm 与 tags 均停在 v2.5.3，CHANGELOG 2.6.3 未发 tag）；新增 llm-wiki-skill 追踪（抓 hermes-agent SKILL.md 的 version 字段，2.1.0）；基线 9 项目

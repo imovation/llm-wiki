@@ -1,10 +1,10 @@
 ---
 title: Spec 与 Wiki 的分工
 created: 2026-08-07
-updated: 2026-08-07
+updated: 2026-08-08
 type: concept
 tags: [spec-vs-wiki, spec-driven, knowledge-base]
-sources: [raw/session-history/2026-07-18-misty-river.md, raw/session-history/2026-07-20-cosmic-harbor.md]
+sources: [raw/session-history/2026-07-18-misty-river.md, raw/session-history/2026-07-20-cosmic-harbor.md, raw/session-history/2026-07-23-playful-planet.md]
 confidence: high
 ---
 
@@ -40,6 +40,8 @@ Wiki     = 理解层 → 从代码 + raw + spec 归档提取/综合
 - 归档后的 spec（openspec/changes/archive/）可作为 raw 源喂给 wiki ingesting
 
 ## 传统文档的分类（AI 原生体系）
+
+> 传统全生命周期文档全集：需求、设计（概要/详细）、测试（计划/用例/报告）、部署运维、用户手册、API 文档、项目管理文档。^[raw/session-history/2026-07-23-playful-planet.md] 下表给出它们在 AI 原生体系中的去向：
 
 | 传统文档 | 归入 |
 |---|---|

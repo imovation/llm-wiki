@@ -1,16 +1,22 @@
 ---
 title: LLM Wiki 模式
 created: 2026-08-07
-updated: 2026-08-07
+updated: 2026-08-08
 type: concept
 tags: [llm-wiki, rag-alternative, knowledge-base, three-layer]
-sources: [raw/articles/llm-wiki.md, raw/articles/SKILL.md]
+sources: [raw/articles/llm-wiki.md, raw/articles/SKILL.md, raw/session-history/2026-08-07-proud-forest.md]
 confidence: high
 ---
 
 # LLM Wiki 模式
 
 Andrej Karpathy 的 **LLM Wiki** 模式（2026-04）：不是 RAG，而是让 LLM **增量构建并维护一个持久 wiki**——位于你和原始来源之间的结构化互链 Markdown 集合。原始文档：`raw/articles/llm-wiki.md`。
+
+## 元应用（本 wiki）
+
+本 wiki 即模式的**自我指涉实例**：以「LLM Wiki 生态」为领域，用自己的方法论管理关于自己的知识——raw 源包括模式原文、Hermes SKILL、OKF 规范与历史研究会话，agent 按 Skill 纪律编译为互链 wiki。^[raw/session-history/2026-08-07-proud-forest.md]
+
+搭建时的选型结论（2026-08-07）：规模小时不需要重型工具——跳过 [[codegraph]]/[[graphify]]（那是建代码库图谱）、[[comet]]（流程编排过重）、[[llm-wiki-compiler]]（自动编译会取代 agent 判断，与 skill 哲学冲突）、[[nashsu-llm-wiki]]（已有 Obsidian + agent）；直接用 opencode + SKILL.md 方法论就地维护。^[raw/session-history/2026-08-07-proud-forest.md]
 
 ## 核心：vs RAG
 
