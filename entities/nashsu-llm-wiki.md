@@ -1,16 +1,16 @@
 ---
 title: nashsu llm_wiki
 created: 2026-08-07
-updated: 2026-08-07
+updated: 2026-08-08
 type: entity
 tags: [nashsu-app, knowledge-base, desktop]
-sources: [raw/session-history/2026-07-18-misty-river.md]
+sources: [raw/session-history/2026-07-18-misty-river.md, raw/releases/tool-updates-2026-08.md]
 confidence: medium
 ---
 
 # nashsu llm_wiki
 
-[nashsu/llm_wiki](https://github.com/nashsu/llm_wiki)，作者 nash_su。**Karpathy LLM Wiki 模式最完整的桌面端产品化实现**。约 14.9k star，GPL v3，Tauri v2（TypeScript 71% + Rust 25%），当前 v0.6.5。@^[raw/session-history/2026-07-18-misty-river.md]
+[nashsu/llm_wiki](https://github.com/nashsu/llm_wiki)，作者 nash_su。**Karpathy LLM Wiki 模式最完整的桌面端产品化实现**。约 16.0k star，GPL v3，Tauri v2（TypeScript 71% + Rust 25%），当前 v0.6.7（2026-08-02）。@^[raw/session-history/2026-07-18-misty-river.md] ^[raw/releases/tool-updates-2026-08.md]
 
 ## 核心定位
 

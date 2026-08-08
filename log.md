@@ -5,6 +5,37 @@
 > 动作：ingest, update, query, lint, create, archive, delete
 > 当此文件超过 500 条记录时，轮换：重命名为 log-YYYY.md，重新开始。
 
+## [2026-08-08] ingest | OpenWiki v0.2.0 → v0.3.1 更新
+- 用户提示 openwiki 有更新；本地已装 openwiki@0.3.1（2026-08-05 发布）
+- 新增 raw/releases/openwiki-changelog-2026-08.md（sha256 记录，release 摘录）
+- 关键新特性：原生 wiki 可视化器（v0.2.5）、.openwikiignore 排除（v0.2.5）、生成后内部链接验证（v0.3.0）、OKF 化+telemetry（v0.2.0）、LangSmith connector / GitHub Copilot provider / 多语言（0.2.4）
+
+## [2026-08-08] update | openwiki 实体页 + 对比页
+- entities/openwiki.md：star 数 12-13k→14.6k，新增版本表、8 条新特性（含架构 checkpoint 修剪）、sources 追加 changelog
+- comparisons/openwiki-vs-graphify-vs-codegraph.md：视觉化 ❌→✅（原生 wiki visualizer）、stars 更新、sources 追加
+- index.md 日期与摘要同步
+
+## [2026-08-08] ingest | 生态工具版本盘点（openwiki 之外 7 项）
+- 新增 raw/releases/tool-updates-2026-08.md（sha256），覆盖 nashsu/openspec/graphify/codegraph/compiler/qmd/comet
+- 有版本更新：nashsu v0.6.7（08-02）、openspec 1.8.0（08-05）、graphify v0.9.35 + star 94k→104k、codegraph v1.5.0 Rust 引擎、compiler v1.1.0、qmd v2.6.3、comet 0.4.0-beta.14（Native 工作流/dashboard/eval）
+- 无更新：hermes llm-wiki skill（v2.1.0）、langsmith（SaaS）
+
+## [2026-08-08] update | 自动更新机制对照补全
+- 用户问询 openwiki 是否也有类似机制 → 补 entities/openwiki.md「自动更新机制」小节（定时重跑+PR vs 感知触发+agent）
+- concepts/llm-wiki-ecosystem.md 新增「自动更新机制（生态内）」对照表
+- 观点：盲跑适合守护性文档，感知触发适合追踪型知识
+
+## [2026-08-08] create | 自动更新机制（检测→落盘→自动摄取）
+- scripts/tracked-projects.json：8 个工具追踪清单（6 GitHub + 2 npm）
+- scripts/check_updates.py：GitHub releases / npm dist-tags 检测，生成 raw/releases/updates-*.md（sha256 与 lint 口径一致），支持 --dry-run/--seed
+- scripts/auto_ingest.sh：检测到更新 → opencode run 自动执行 SCHEMA Ingest 流程
+- cron 已装：每日 09:00 运行 auto_ingest.sh；基线已 seed（8 项目）
+- SCHEMA.md 登记「自动更新机制」；AGENTS.md 增加会话开始检查 updates-*.md 的规约
+
+## [2026-08-08] update | 6 实体页版本/star 同步
+- nashsu-llm-wiki（v0.6.7）、comet（0.4.0-beta 要点）、graphify（v0.9.35+104k）、codegraph（v1.5.0）、openspec（v1.8.0）、qmd（v2.6.3）、llm-wiki-compiler（v1.1.0）
+- 对比页 stars 列同步（graphify 104k）；index 摘要同步
+
 ## [2026-08-07] create | Wiki 已初始化
 - 领域：LLM Wiki 生态（模式、工具、规范、应用）
 - 依据 Hermes [[llm-wiki-skill]] 方法论，在 /home/imovation/projects/llm-wiki 就地搭建

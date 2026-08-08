@@ -35,6 +35,12 @@
 - **Query**：先读 index → 读相关页 → 综合答案带引用 → 好答案归档到 `queries/`
 - **Lint**：断链、孤儿页、index 完整性、frontmatter 缺失、过期内容、矛盾、标签审计、页面 >200 行
 
+## 自动更新机制（cron 每日 09:00）
+
+- `scripts/check_updates.py` + `scripts/auto_ingest.sh` 自动检测 tracked-projects.json 中的工具更新，生成 `raw/releases/updates-YYYY-MM-DD.md` 并触发 agent 摄取
+- **每次会话开始时检查**：`raw/releases/updates-*.md` 是否有未处理文件——有则优先完成 Ingest（更新实体页、登记 log、跑 lint）
+- 摄取完成即视为处理，raw 文件保留（不可变来源）；机制细节见 SCHEMA.md「自动更新机制」
+
 ## 参考
 
 - Karpathy 模式：`raw/articles/llm-wiki.md`

@@ -2,7 +2,7 @@
 
 > 内容目录。每个 wiki 页面在其类型下列出，附一行摘要。
 > 首先阅读此文件以找到与任何查询相关的页面。
-> 最后更新：2026-08-07 | 总页面数：26
+> 最后更新：2026-08-08 | 总页面数：26
 
 ## 实体
 
@@ -10,12 +10,12 @@
 
 - [[codegraph]] - 本地优先代码智能工具，Rust 内核 + SQLite/FTS5，surgical context。
 - [[comet]] - Agent Skill 平台 + 可恢复长任务工作流（五阶段状态机）。
-- [[graphify]] - 多模态代码知识图谱（Leiden 社区 + God Node + 边置信度）。
+- [[graphify]] - 多模态代码知识图谱（Leiden 社区 + God Node + 边置信度，v0.9.35）。
 - [[langsmith]] - LLM 应用可观测性平台（tracing/eval/prompt 管理）。
 - [[llm-wiki-compiler]] - Karpathy 模式的 CLI/SDK 编译器，两阶段 LLM 管线 + 生命周期门控。
 - [[llm-wiki-skill]] - Hermes Agent 内置 llm-wiki skill v2.1.0（本 wiki 施工手册）。
 - [[nashsu-llm-wiki]] - Karpathy 模式桌面端产品化（两阶段 CoT + 知识图谱 + Louvain）。
-- [[openwiki]] - LangChain 的 agent 文档 CLI，OKF 兼容，CI 自动更新。
+- [[openwiki]] - LangChain 的 agent 文档 CLI，OKF 兼容，CI 自动更新（v0.3.1）。
 - [[openspec]] - 规范驱动开发（SDD）框架，/opsx:propose → apply → archive。
 - [[qmd]] - 全本地 Markdown 混合搜索引擎（BM25 + 向量 + LLM 重排）。
 

@@ -1,10 +1,10 @@
 ---
 title: OpenWiki vs Graphify vs CodeGraph
 created: 2026-08-07
-updated: 2026-08-07
+updated: 2026-08-08
 type: comparison
 tags: [openwiki, graphify, codegraph]
-sources: [raw/session-history/2026-07-18-misty-river.md, raw/session-history/2026-07-20-cosmic-harbor.md, raw/session-history/2026-07-23-mighty-star.md]
+sources: [raw/session-history/2026-07-18-misty-river.md, raw/session-history/2026-07-20-cosmic-harbor.md, raw/session-history/2026-07-23-mighty-star.md, raw/releases/openwiki-changelog-2026-08.md]
 confidence: high
 ---
 
@@ -29,10 +29,10 @@ CodeGraph:  Agent 需要精确上下文 → 我给 Surgical Context
 | 确定性 | 低（LLM 生成） | 高（tree-sitter）+ LLM/media | **最高（Rust AST + 逐字节校验）** |
 | 存储 | Markdown Wiki | JSON 图文件 | **SQLite (FTS5)** |
 | 更新 | LLM 全量重生成 | 增量 patch ~0.8s | **OS 事件自动同步 ~0.3s** |
-| 视觉化 | ❌ | ✅ 力导向 HTML + 社区着色 | 无（Agent 优先） |
-| 外部数据源 | Gmail/Notion/X/WEB | PDF/图片/视频/论文 | —（纯代码） |
+| 视觉化 | ✅ 原生 wiki visualizer（v0.2.5+） | ✅ 力导向 HTML + 社区着色 | 无（Agent 优先） |
+| 外部数据源 | Gmail/Notion/X/WEB/Slack/MCP | PDF/图片/视频/论文 | —（纯代码） |
 | 基准 | N/A | LOCOMO recall@10 0.497 | **89% 少工具调用、69% 少 tokens** |
-| stars | ~13k | ~94k | ~62k |
+| stars | ~14.6k | ~104k | ~62k |
 
 ## 关键分水岭
 

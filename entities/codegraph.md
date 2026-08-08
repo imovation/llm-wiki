@@ -1,16 +1,16 @@
 ---
 title: CodeGraph
 created: 2026-08-07
-updated: 2026-08-07
+updated: 2026-08-08
 type: entity
 tags: [codegraph, knowledge-graph, cli]
-sources: [raw/session-history/2026-07-18-misty-river.md, raw/session-history/2026-07-20-cosmic-harbor.md, raw/session-history/2026-07-23-mighty-star.md]
+sources: [raw/session-history/2026-07-18-misty-river.md, raw/session-history/2026-07-20-cosmic-harbor.md, raw/session-history/2026-07-23-mighty-star.md, raw/releases/tool-updates-2026-08.md]
 confidence: high
 ---
 
 # CodeGraph
 
-[colbymchenry/codegraph](https://github.com/colbymchenry/codegraph)，Colby McHenry 开发的**本地优先代码智能工具**，将代码库化为 AI agent 可直接查询的**预索引知识图谱**（SQLite + FTS5）。TypeScript CLI + **Rust 内核**，MIT，约 61.9k star。@^[raw/session-history/2026-07-23-mighty-star.md]
+[colbymchenry/codegraph](https://github.com/colbymchenry/codegraph)，Colby McHenry 开发的**本地优先代码智能工具**，将代码库化为 AI agent 可直接查询的**预索引知识图谱**（SQLite + FTS5）。TypeScript CLI + **Rust 内核**，MIT，约 61.9k star，当前 v1.5.0（Rust 引擎版，2026-07-21）。@^[raw/session-history/2026-07-23-mighty-star.md] ^[raw/releases/tool-updates-2026-08.md]
 
 ## 核心定位：Surgical Context
 

@@ -1,0 +1,42 @@
+{
+  "openwiki": {
+    "page": "entities/openwiki.md",
+    "type": "github",
+    "repo": "langchain-ai/openwiki"
+  },
+  "nashsu-llm-wiki": {
+    "page": "entities/nashsu-llm-wiki.md",
+    "type": "github",
+    "repo": "nashsu/llm_wiki"
+  },
+  "graphify": {
+    "page": "entities/graphify.md",
+    "type": "github",
+    "repo": "Graphify-Labs/graphify"
+  },
+  "codegraph": {
+    "page": "entities/codegraph.md",
+    "type": "github",
+    "repo": "colbymchenry/codegraph"
+  },
+  "llm-wiki-compiler": {
+    "page": "entities/llm-wiki-compiler.md",
+    "type": "github",
+    "repo": "atomicstrata/llm-wiki-compiler"
+  },
+  "comet": {
+    "page": "entities/comet.md",
+    "type": "github",
+    "repo": "rpamis/comet"
+  },
+  "openspec": {
+    "page": "entities/openspec.md",
+    "type": "npm",
+    "pkg": "@fission-ai/openspec"
+  },
+  "qmd": {
+    "page": "entities/qmd.md",
+    "type": "npm",
+    "pkg": "@tobilu/qmd"
+  }
+}

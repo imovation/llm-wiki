@@ -1,16 +1,16 @@
 ---
 title: OpenSpec
 created: 2026-08-07
-updated: 2026-08-07
+updated: 2026-08-08
 type: entity
 tags: [openspec, spec-driven, ai-coding]
-sources: [raw/session-history/2026-07-18-misty-river.md]
+sources: [raw/session-history/2026-07-18-misty-river.md, raw/releases/tool-updates-2026-08.md]
 confidence: high
 ---
 
 # OpenSpec
 
-[Fission-AI/OpenSpec](https://github.com/Fission-AI/OpenSpec)（约 61.7k star，MIT，TypeScript CLI）。**规范驱动开发（SDD）框架**——在写代码之前，人类和 AI 先在规范上达成一致。
+[Fission-AI/OpenSpec](https://github.com/Fission-AI/OpenSpec)（约 61.7k star，MIT，TypeScript CLI）。**规范驱动开发（SDD）框架**——在写代码之前，人类和 AI 先在规范上达成一致。npm 最新 v1.8.0（2026-08-05；v1.7.0 2026-07-29）。
 
 ## 一句话
 

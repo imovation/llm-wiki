@@ -1,1 +1,4 @@
 .obsidian/
+scripts/.state.json
+raw/releases/.auto-ingest.log
+raw/releases/.cron.log

@@ -1,16 +1,16 @@
 ---
 title: llm-wiki-compiler
 created: 2026-08-07
-updated: 2026-08-07
+updated: 2026-08-08
 type: entity
 tags: [llmwiki-compiler, knowledge-base, cli]
-sources: [raw/session-history/2026-07-18-misty-river.md]
+sources: [raw/session-history/2026-07-18-misty-river.md, raw/releases/tool-updates-2026-08.md]
 confidence: medium
 ---
 
 # llm-wiki-compiler
 
-[atomicstrata/llm-wiki-compiler](https://github.com/atomicstrata/llm-wiki-compiler)（别名 `llmwiki`）。Karpathy LLM Wiki 模式的 **CLI/SDK 编译器实现**。TypeScript 98.5%，MIT，约 1.8k star。@^[raw/session-history/2026-07-18-misty-river.md]
+[atomicstrata/llm-wiki-compiler](https://github.com/atomicstrata/llm-wiki-compiler)（别名 `llmwiki`）。Karpathy LLM Wiki 模式的 **CLI/SDK 编译器实现**。TypeScript 98.5%，MIT，约 1.8k star，当前 v1.1.0（2026-07-15；v1.0.0 为 2026-07-10 里程碑）。@^[raw/session-history/2026-07-18-misty-river.md] ^[raw/releases/tool-updates-2026-08.md]
 
 ## 一句话
 

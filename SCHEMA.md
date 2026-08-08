@@ -92,6 +92,16 @@ sha256:
 ## 对比页面（comparisons/）
 并排分析：对比动机、维度（表格）、结论、来源
 
+## 自动更新机制（2026-08-08 起）
+
+- **检测**：`scripts/check_updates.py` 每日 09:00（cron）查询 `scripts/tracked-projects.json` 中所有项目的 GitHub releases / npm dist-tags
+- **基线**：`scripts/.state.json` 记录各项目上次已知版本；新增/改名项目需在 `tracked-projects.json` 登记并重跑 `--seed`
+- **落盘**：检测到新版本 → 生成 `raw/releases/updates-YYYY-MM-DD.md`（含 sha256，作为不可变来源）
+- **自动摄取**：`scripts/auto_ingest.sh` 检测到更新后调 `opencode run`，agent 按 Ingest 流程处理 updates-*.md
+- **手工触发**：`python3 scripts/check_updates.py --dry-run`（只报告）；`--seed`（重设基线）
+- **日志**：raw/releases/.auto-ingest.log、.cron.log（raw 下非 .md 文件，lint 豁免）
+- **维护注意**：`updates-*.md` 是 agent 待处理队列，摄取完成后不可删除（raw/ 不可变），处理时以最新日期文件为准
+
 ## 更新策略
 
 新信息与旧内容冲突时：

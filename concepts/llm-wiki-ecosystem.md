@@ -47,6 +47,18 @@ Graphify（理解）→ OpenWiki（记录）→ Comet（执行+评估）
 - 离职交接方案（CodeGraph 图谱冻结 + Spec 补齐 + Wiki 编译 + 搜索就绪）
 - 个人知识库：Obsidian + agent skill 场景化
 
+## 自动更新机制（生态两种思路）
+
+| | 定时重跑（[[openwiki]] 内置） | 感知触发（本 wiki） |
+|---|---|---|
+| 信号 | 无——周期盲跑（schedule） | 有——检测上游版本/依赖变化 |
+| 动作 | `openwiki --update` → 提 PR | agent 按 Ingest 流程摄取 updates-*.md |
+| 审核门 | PR 人工合并 | lint + log 记账 |
+| 适用 | 单一知识源的持续刷新 | 监控多工具生态的版本演进 |
+
+- OpenWiki PR 机制见 [[openwiki]]；本 wiki 机制见 SCHEMA.md「自动更新机制」
+- 生态趋势观察：**盲跑适合守护性文档，感知触发适合追踪型知识（版本/竞品演进）**
+
 ## 相关
 
 - 核心概念：[[llm-wiki-pattern]]、[[okf]]、[[spec-vs-wiki]]、[[three-layer-architecture]]

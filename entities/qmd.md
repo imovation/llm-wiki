@@ -1,16 +1,16 @@
 ---
 title: qmd
 created: 2026-08-07
-updated: 2026-08-07
+updated: 2026-08-08
 type: entity
 tags: [qmd, knowledge-base, cli, search]
-sources: [raw/session-history/2026-07-18-misty-river.md, raw/articles/llm-wiki.md, raw/articles/llm-wiki.zh.md]
+sources: [raw/session-history/2026-07-18-misty-river.md, raw/articles/llm-wiki.md, raw/articles/llm-wiki.zh.md, raw/releases/tool-updates-2026-08.md]
 confidence: high
 ---
 
 # qmd
 
-[tobi/qmd](https://github.com/tobi/qmd)（Query Markup Documents），作者 tobi。**全本地 Markdown 混合搜索引擎**。TypeScript（Bun/Node.js），MIT，约 28k star。^[raw/session-history/2026-07-18-misty-river.md]
+[tobi/qmd](https://github.com/tobi/qmd)（Query Markup Documents），作者 tobi。**全本地 Markdown 混合搜索引擎**。TypeScript（Bun/Node.js），MIT，约 28k star，当前 v2.6.3（2026-06-24）。^[raw/session-history/2026-07-18-misty-river.md] ^[raw/releases/tool-updates-2026-08.md]
 
 这是 [Karpathy 的 LLM Wiki 模式](https://gist.github.com/karpathy/442a6bf555914893e9891c11519de94f) 中提到的 "wiki 规模扩大后的可选搜索方案"。
 
