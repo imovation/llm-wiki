@@ -23,12 +23,11 @@ jobs:
           python3 scripts/check_updates.py --dry-run > /tmp/check.out 2>&1 || true
           echo "dry_run_output:"
           cat /tmp/check.out
-          HAS="$(python3 -c "
-import re
-txt = open('/tmp/check.out').read()
-print('yes' if re.search(r'\[check\].*?->', txt) else 'no')
-")"
-          echo "has_updates=$HAS" >> "$GITHUB_OUTPUT"
+          if grep -qE '\[check\].*->' /tmp/check.out; then
+            echo "has_updates=yes" >> "$GITHUB_OUTPUT"
+          else
+            echo "has_updates=no" >> "$GITHUB_OUTPUT"
+          fi
       - name: Open issue if updates pending
         if: steps.check.outputs.has_updates == 'yes'
         uses: actions/github-script@v7
