@@ -18,6 +18,7 @@ import datetime
 import hashlib
 import json
 import os
+import re
 import sys
 import urllib.request
 
@@ -40,6 +41,21 @@ def latest_github(repo):
     return d.get("tag_name") or d.get("name"), d.get("published_at", ""), d.get("html_url", "")
 
 
+def latest_github_tags(repo):
+    d = fetch_json(f"https://api.github.com/repos/{repo}/tags?per_page=1")
+    tag = d[0]["name"] if d else ""
+    return tag, "", f"https://github.com/{repo}/tags"
+
+
+def latest_raw(repo, file, field="version"):
+    url = f"https://raw.githubusercontent.com/{repo}/main/{file}"
+    req = urllib.request.Request(url, headers=UA)
+    with urllib.request.urlopen(req, timeout=30) as r:
+        txt = r.read().decode()
+    m = re.search(rf"^{field}:\s*([^\s{{]+)", txt, re.M)
+    return (m.group(1) if m else "?"), "", f"https://github.com/{repo}/blob/main/{file}"
+
+
 def latest_npm(pkg):
     d = fetch_json(f"https://registry.npmjs.org/{pkg}/latest")
     return d.get("version", ""), "", f"https://www.npmjs.com/package/{pkg}"
@@ -49,6 +65,10 @@ def query(project):
     t = project["type"]
     if t == "github":
         return latest_github(project["repo"])
+    if t == "github-tags":
+        return latest_github_tags(project["repo"])
+    if t == "raw":
+        return latest_raw(project["repo"], project["file"], project.get("field", "version"))
     if t == "npm":
         return latest_npm(project["pkg"])
     raise ValueError(f"unknown type {t}")

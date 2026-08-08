@@ -36,7 +36,14 @@
   },
   "qmd": {
     "page": "entities/qmd.md",
-    "type": "npm",
-    "pkg": "@tobilu/qmd"
+    "type": "github-tags",
+    "repo": "tobi/qmd"
+  },
+  "llm-wiki-skill": {
+    "page": "entities/llm-wiki-skill.md",
+    "type": "raw",
+    "repo": "NousResearch/hermes-agent",
+    "file": "skills/research/llm-wiki/SKILL.md",
+    "field": "version"
   }
 }

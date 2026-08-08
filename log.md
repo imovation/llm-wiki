@@ -20,6 +20,13 @@
 - 有版本更新：nashsu v0.6.7（08-02）、openspec 1.8.0（08-05）、graphify v0.9.35 + star 94k→104k、codegraph v1.5.0 Rust 引擎、compiler v1.1.0、qmd v2.6.3、comet 0.4.0-beta.14（Native 工作流/dashboard/eval）
 - 无更新：hermes llm-wiki skill（v2.1.0）、langsmith（SaaS）
 
+## [2026-08-08] update | 追踪清单修复 + 端到端演练
+- check_updates.py 新增 github-tags / raw（远端文件抓 frontmatter version）两种类型
+- tracked-projects.json：qmd 由 npm 改 github-tags（npm 与 tags 均停在 v2.5.3，CHANGELOG 2.6.3 未发 tag）；新增 llm-wiki-skill 追踪（抓 hermes-agent SKILL.md 的 version 字段，2.1.0）；基线 9 项目
+- entities/qmd.md 校准：以发布 tag v2.5.3 为准，加版本口径说明块
+- **端到端演练成功**：模拟 graphify v0.9.35→v0.9.36 → auto_ingest.sh 全链路自动执行（检测→updates-2026-08-08.md→opencode 真实摄取→页面+index+log→lint→git commit 384aa71）
+- lint：31 页 0 问题
+
 ## [2026-08-08] create | git 自动提交机制
 - auto_ingest.sh 摄取完成后自动 git commit（`ingest: YYYY-MM-DD auto updates`），无变更则跳过
 - .gitignore 补：scripts/.state.json、raw/releases/.auto-ingest.log、.cron.log
