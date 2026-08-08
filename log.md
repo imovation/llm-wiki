@@ -20,6 +20,12 @@
 - 有版本更新：nashsu v0.6.7（08-02）、openspec 1.8.0（08-05）、graphify v0.9.35 + star 94k→104k、codegraph v1.5.0 Rust 引擎、compiler v1.1.0、qmd v2.6.3、comet 0.4.0-beta.14（Native 工作流/dashboard/eval）
 - 无更新：hermes llm-wiki skill（v2.1.0）、langsmith（SaaS）
 
+## [2026-08-08] create | git 自动提交机制
+- auto_ingest.sh 摄取完成后自动 git commit（`ingest: YYYY-MM-DD auto updates`），无变更则跳过
+- .gitignore 补：scripts/.state.json、raw/releases/.auto-ingest.log、.cron.log
+- 提交基线 commit aefc07b：自动机制全套 + 8 工具版本/star 同步 + 2 份 raw changelog
+- SCHEMA.md 机制说明补「自动提交」与「仓库」条目；AGENTS.md 提示手动摄取也提交 git
+
 ## [2026-08-08] update | 自动更新机制对照补全
 - 用户问询 openwiki 是否也有类似机制 → 补 entities/openwiki.md「自动更新机制」小节（定时重跑+PR vs 感知触发+agent）
 - concepts/llm-wiki-ecosystem.md 新增「自动更新机制（生态内）」对照表

@@ -98,6 +98,8 @@ sha256:
 - **基线**：`scripts/.state.json` 记录各项目上次已知版本；新增/改名项目需在 `tracked-projects.json` 登记并重跑 `--seed`
 - **落盘**：检测到新版本 → 生成 `raw/releases/updates-YYYY-MM-DD.md`（含 sha256，作为不可变来源）
 - **自动摄取**：`scripts/auto_ingest.sh` 检测到更新后调 `opencode run`，agent 按 Ingest 流程处理 updates-*.md
+- **自动提交**：摄取完成后 `auto_ingest.sh` 自动 `git add -A && git commit`（message：`ingest: YYYY-MM-DD auto updates`）；无变更则跳过
+- **仓库**：本 wiki 是 git 仓库（main 分支）。`.gitignore` 忽略 `.state.json` 与运行时日志；raw/ 与页面均入库（raw 不可变，提交即快照）
 - **手工触发**：`python3 scripts/check_updates.py --dry-run`（只报告）；`--seed`（重设基线）
 - **日志**：raw/releases/.auto-ingest.log、.cron.log（raw 下非 .md 文件，lint 豁免）
 - **维护注意**：`updates-*.md` 是 agent 待处理队列，摄取完成后不可删除（raw/ 不可变），处理时以最新日期文件为准
