@@ -20,6 +20,12 @@
 - 有版本更新：nashsu v0.6.7（08-02）、openspec 1.8.0（08-05）、graphify v0.9.35 + star 94k→104k、codegraph v1.5.0 Rust 引擎、compiler v1.1.0、qmd v2.6.3、comet 0.4.0-beta.14（Native 工作流/dashboard/eval）
 - 无更新：hermes llm-wiki skill（v2.1.0）、langsmith（SaaS）
 
+## [2026-08-08] query | Wiki 自动更新机制建设
+- 会话归档：从 openwiki 更新摄取起步，建成并验证「检测→落盘→自动摄取→lint 门禁→git 提交推送」自动维护体系
+- 交付：check_updates.py / auto_ingest.sh / tracked-projects.json（9 项目）/ cron / GHA 双保险 / README / 内容体检
+- 修复：cron 环境（PATH/代理/超时）、GHA 误报（state 基线、grep 判定、YAML）、lint 硬门禁
+- 状态：机制闭环，远程已同步，待明日 cron 与 GHA 首轮真机观察
+
 ## [2026-08-08] update | auto_ingest 加 lint 硬门禁
 - commit 前强制跑 lint：摄取失败/不完整时绝不提交，lint 失败详情写入 .auto-ingest.log 留待人工
 - 失败路径已测（注入断链 → lint 拦截 ✓）；当前 31 页 0 问题，仓库干净
