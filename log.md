@@ -20,6 +20,12 @@
 - 有版本更新：nashsu v0.6.7（08-02）、openspec 1.8.0（08-05）、graphify v0.9.35 + star 94k→104k、codegraph v1.5.0 Rust 引擎、compiler v1.1.0、qmd v2.6.3、comet 0.4.0-beta.14（Native 工作流/dashboard/eval）
 - 无更新：hermes llm-wiki skill（v2.1.0）、langsmith（SaaS）
 
+## [2026-08-08] update | GHA 云端验证 + README 维护机制 + cron 就绪
+- 手动触发 auto-update-check workflow（run 31237444602）：lint ✓ 6s、check-updates ✓ 5s，全绿；仅 Node 20 弃用警告（非错误，不阻塞）
+- README.md 新增「自动维护机制」章节（四环节表 + 触发方式）
+- cron 确认激活：每日 09:00；下次 2026-08-09 09:00
+- 观察点：明日首次真机运行后看 raw/releases/.cron.log 是否记录「no updates」静默退出
+
 ## [2026-08-08] update | 自动 lint 机制（GHA 每日巡检）
 - 用户问询后确认补：SCHEMA.md lint 触发场景本含「维护时定期」，此前只实现了「关键动作后」
 - auto-update-check.yml 新增 lint job：每日跑 scripts/lint.py，非零退出时开 issue（'lint: knowledge base issues'，去重）；不占本地资源

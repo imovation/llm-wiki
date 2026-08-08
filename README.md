@@ -27,8 +27,22 @@ llm-wiki/
 ├── concepts/           #   概念页（LLM Wiki 模式、OKF、spec-vs-wiki…）
 ├── comparisons/        #   对比页
 ├── queries/            #   归档的好答案
-└── scripts/lint.py     # 可执行健康检查
+├── scripts/            # 自动维护脚本（check_updates / auto_ingest / lint）
+└── .github/workflows/   # 云端兜底（每日版本检测 + lint 巡检）
 ```
+
+## 自动维护机制
+
+知识库不是一潭死水——工具生态天天在变，机制自动跟上：
+
+| 环节 | 工具 | 说明 |
+|---|---|---|
+| 版本检测 | `scripts/check_updates.py` | 每日 09:00（cron）查询 9 个追踪项目的 GitHub releases / npm dist-tags（清单：`scripts/tracked-projects.json`） |
+| 自动摄取 | `scripts/auto_ingest.sh` | 有更新 → opencode 按 SCHEMA Ingest 流程处理 → 更新页面 → 记账 → 提交并推送 |
+| 每日巡检 | GitHub Actions（01:30 UTC） | 云端二次检查：版本未同步 / lint 失败 → 自动开 issue |
+| git 同步 | 自动 | 摄取/巡检改动全部提交推送到 origin（movation/llm-wiki，公开） |
+
+发现新版本或可疑状态时，issue 就是入口；手动触发可 `python3 scripts/check_updates.py --dry-run`、`gh workflow run auto-update-check`。
 
 ## 快速开始
 
