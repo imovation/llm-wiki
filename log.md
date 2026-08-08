@@ -20,6 +20,12 @@
 - 有版本更新：nashsu v0.6.7（08-02）、openspec 1.8.0（08-05）、graphify v0.9.35 + star 94k→104k、codegraph v1.5.0 Rust 引擎、compiler v1.1.0、qmd v2.6.3、comet 0.4.0-beta.14（Native 工作流/dashboard/eval）
 - 无更新：hermes llm-wiki skill（v2.1.0）、langsmith（SaaS）
 
+## [2026-08-08] fix | GHA 重新验证通过（run 31237710818）
+- 上一版修复中内联 python 多行字符串破坏 YAML → push 触发 run 直接失败、dispatch 422
+- 改用 `grep -qE '\[check\].*->'` 修复判定（避免 grep 选项歧义 + YAML 嵌套引号）
+- 云端复验：有基线后 `[check] no updates`，无 issue 误报；check-updates ✓ 9s、lint ✓ 10s 全绿
+- 备注：PyYAML 1.1 把 `on:` 解析为 True 是检查陷阱，GitHub 解析器无碍（验证以 jobs 键为准）
+
 ## [2026-08-08] fix | GHA 误报修复（state 基线入库 + 判定修复）
 - 排查发现 GHA 云端 check 有 2 个 bug：① .state.json 被 gitignore → 云端无基线 → 9 项目全部显示 (none)→误报；② grep -q "->" 把模式当选项报错 → has_updates 恒 no → issue step 永远 skipped
 - 修复：.state.json 移出 gitignore 并入库（云端基线）；check 判定改用 python 正则；check_updates.py 无更新时不写盘（防 git 噪音）
