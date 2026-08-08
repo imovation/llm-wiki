@@ -58,7 +58,7 @@ else
   echo "WARN: opencode 不在 PATH，无法自动摄取。请手动执行 Ingest 或安装 opencode。"
 fi
 
-# 4) git 自动提交（若摄取产生变更；scm 不可用时跳过）
+# 4) git 自动提交（lint 硬门禁：即使 opencode 失败，lint 不过绝不提交）
 commit_auto() {
   if ! command -v git >/dev/null 2>&1; then
     echo "$(stamp) git not found — skip commit" >> "$LOGFILE"
@@ -68,6 +68,11 @@ commit_auto() {
   if git diff --quiet && git diff --cached --quiet; then
     echo "$(stamp) no changes to commit" >> "$LOGFILE"
     return 0
+  fi
+  if ! python3 "$WIKI/scripts/lint.py" >/dev/null 2>&1; then
+    echo "$(stamp) LINT FAILED — changes NOT committed (inspecting)" >> "$LOGFILE"
+    python3 "$WIKI/scripts/lint.py" >> "$LOGFILE" 2>&1 || true
+    return 1
   fi
   DAY="$(date '+%Y-%m-%d')"
   if git add -A && git commit -m "ingest: $DAY auto updates" >/dev/null 2>&1; then

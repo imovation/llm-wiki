@@ -20,6 +20,10 @@
 - 有版本更新：nashsu v0.6.7（08-02）、openspec 1.8.0（08-05）、graphify v0.9.35 + star 94k→104k、codegraph v1.5.0 Rust 引擎、compiler v1.1.0、qmd v2.6.3、comet 0.4.0-beta.14（Native 工作流/dashboard/eval）
 - 无更新：hermes llm-wiki skill（v2.1.0）、langsmith（SaaS）
 
+## [2026-08-08] update | auto_ingest 加 lint 硬门禁
+- commit 前强制跑 lint：摄取失败/不完整时绝不提交，lint 失败详情写入 .auto-ingest.log 留待人工
+- 失败路径已测（注入断链 → lint 拦截 ✓）；当前 31 页 0 问题，仓库干净
+
 ## [2026-08-08] fix | GHA 重新验证通过（run 31237710818）
 - 上一版修复中内联 python 多行字符串破坏 YAML → push 触发 run 直接失败、dispatch 422
 - 改用 `grep -qE '\[check\].*->'` 修复判定（避免 grep 选项歧义 + YAML 嵌套引号）
