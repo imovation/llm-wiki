@@ -20,6 +20,11 @@
 - 有版本更新：nashsu v0.6.7（08-02）、openspec 1.8.0（08-05）、graphify v0.9.35 + star 94k→104k、codegraph v1.5.0 Rust 引擎、compiler v1.1.0、qmd v2.6.3、comet 0.4.0-beta.14（Native 工作流/dashboard/eval）
 - 无更新：hermes llm-wiki skill（v2.1.0）、langsmith（SaaS）
 
+## [2026-08-08] fix | GHA 误报修复（state 基线入库 + 判定修复）
+- 排查发现 GHA 云端 check 有 2 个 bug：① .state.json 被 gitignore → 云端无基线 → 9 项目全部显示 (none)→误报；② grep -q "->" 把模式当选项报错 → has_updates 恒 no → issue step 永远 skipped
+- 修复：.state.json 移出 gitignore 并入库（云端基线）；check 判定改用 python 正则；check_updates.py 无更新时不写盘（防 git 噪音）
+- 本地模拟验证：基线场景 yes / 无更新 no；lint 31 页 0 问题
+
 ## [2026-08-08] update | GHA 云端验证 + README 维护机制 + cron 就绪
 - 手动触发 auto-update-check workflow（run 31237444602）：lint ✓ 6s、check-updates ✓ 5s，全绿；仅 Node 20 弃用警告（非错误，不阻塞）
 - README.md 新增「自动维护机制」章节（四环节表 + 触发方式）

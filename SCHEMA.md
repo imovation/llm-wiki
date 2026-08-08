@@ -95,7 +95,7 @@ sha256:
 ## 自动更新机制（2026-08-08 起）
 
 - **检测**：`scripts/check_updates.py` 每日 09:00（cron）查询 `scripts/tracked-projects.json` 中所有项目的 GitHub releases / npm dist-tags
-- **基线**：`scripts/.state.json` 记录各项目上次已知版本；新增/改名项目需在 `tracked-projects.json` 登记并重跑 `--seed`
+- **基线**：`scripts/.state.json` 记录各项目上次已知版本，**入库**（作为 GHA 云端基线）；新增/改名项目需在 `tracked-projects.json` 登记并重跑 `--seed`；无更新时不写盘（避免 git 噪音）
 - **落盘**：检测到新版本 → 生成 `raw/releases/updates-YYYY-MM-DD.md`（含 sha256，作为不可变来源）
 - **自动摄取**：`scripts/auto_ingest.sh` 检测到更新后调 `opencode run`，agent 按 Ingest 流程处理 updates-*.md
 - **自动提交**：摄取完成后 `auto_ingest.sh` 自动 `git add -A && git commit`（message：`ingest: YYYY-MM-DD auto updates`）；无变更则跳过

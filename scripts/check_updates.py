@@ -106,9 +106,7 @@ def main():
 
     if not found:
         print("[check] no updates")
-        if not args.dry_run:
-            with open(STATE, "w", encoding="utf-8") as f:
-                json.dump(state, f, ensure_ascii=False, indent=2)
+        # 无更新时不写盘：避免 checked 日期噪音弄脏 git 工作区（state 文件入库作为云端基线）
         return 0
 
     if args.seed:
