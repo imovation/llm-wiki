@@ -1,16 +1,16 @@
 ---
 title: nashsu llm_wiki
 created: 2026-08-07
-updated: 2026-08-08
+updated: 2026-08-09
 type: entity
 tags: [nashsu-app, knowledge-base, desktop]
-sources: [raw/session-history/2026-07-18-misty-river.md, raw/releases/tool-updates-2026-08.md]
+sources: [raw/session-history/2026-07-18-misty-river.md, raw/releases/tool-updates-2026-08.md, raw/releases/updates-2026-08-09.md]
 confidence: medium
 ---
 
 # nashsu llm_wiki
 
-[nashsu/llm_wiki](https://github.com/nashsu/llm_wiki)，作者 nash_su。**Karpathy LLM Wiki 模式最完整的桌面端产品化实现**。约 16.0k star，GPL v3，Tauri v2（TypeScript 71% + Rust 25%），当前 v0.6.7（2026-08-02）。@^[raw/session-history/2026-07-18-misty-river.md] ^[raw/releases/tool-updates-2026-08.md]
+[nashsu/llm_wiki](https://github.com/nashsu/llm_wiki)，作者 nash_su。**Karpathy LLM Wiki 模式最完整的桌面端产品化实现**。约 16.0k star，GPL v3，Tauri v2（TypeScript 71% + Rust 25%），当前 v0.6.8（2026-08-08）。@^[raw/session-history/2026-07-18-misty-river.md] ^[raw/releases/tool-updates-2026-08.md]
 
 ## 核心定位
 
@@ -42,3 +42,7 @@ confidence: medium
 
 - 概念：[[llm-wiki-ecosystem]]
 - 工具：[[llm-wiki-compiler]]、[[llm-wiki-skill]]、[[openwiki]]、[[graphify]]
+
+## 版本动态
+
+- **v0.6.8（2026-08-08，维护版）**：GitHub Actions 自动发布，无发布说明（仅 14 个发行资产）；版本自 v0.6.7（2026-08-02）小幅前进，无明显功能变更记录。^[raw/releases/updates-2026-08-09.md]

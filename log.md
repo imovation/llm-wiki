@@ -178,3 +178,14 @@
 - entities/graphify.md：正文版本更新为 v0.9.36（2026-08-07），新增「版本动态」小节（correctness 修复四点：静默失败告警、Swift 跨文件 extension 调用边、node-id 确定性冲突消解、Windows skill PowerShell），sources 追加 updates-2026-08-08.md
 - index.md：graphify 摘要版本号同步 v0.9.36
 - lint：通过
+## [2026-08-08] query | opencode AI 原生开发环境搭建
+- 用户问基于 opencode 的 AI 原生通用项目环境如何搭建
+- 回答：五层框架（L0 安装连接 / L1 AGENTS.md 规则层 / L2 agent+permission / L3 skills 可复用能力 / L4 知识层 codegraph+openspec+wiki / L5 自动化）
+- 引用 opencode 官方 docs（rules/agents/skills）+ 本 wiki 选型经验（proud-forest）
+- 待定：是否归档为 queries/opencode-ai-env.md（需先摄入 opencode docs 到 raw/）
+## [2026-08-09] ingest | Graphify v0.9.36 → v0.9.37、nashsu llm_wiki v0.6.7 → v0.6.8
+- cron 检测 raw/releases/updates-2026-08-09.md（sha256 已落盘）
+- entities/graphify.md：正文最新版本更新为 v0.9.37（2026-08-08），「版本动态」新增 correctness 修复五组：TS 成员调用伪边（import 门控 + 表推断降级 INFERRED）、回调体调用丢失、Kotlin import/全限定调用/不可解析告警、update 重试失败文件、claude-cli 信封错误透出；sources 追加 updates-2026-08-09.md
+- entities/nashsu-llm-wiki.md：正文版本更新为 v0.6.8（2026-08-08），新增「版本动态」小节（GitHub Actions 自动发布、无发布说明）；sources 追加 updates-2026-08-09.md
+- index.md：graphify 摘要同步 v0.9.37，头部日期更新 2026-08-09
+- lint：通过
