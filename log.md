@@ -189,3 +189,9 @@
 - entities/nashsu-llm-wiki.md：正文版本更新为 v0.6.8（2026-08-08），新增「版本动态」小节（GitHub Actions 自动发布、无发布说明）；sources 追加 updates-2026-08-09.md
 - index.md：graphify 摘要同步 v0.9.37，头部日期更新 2026-08-09
 - lint：通过
+
+## [2026-08-10] ingest | Graphify v0.9.37 → v0.9.38
+- cron 检测 raw/releases/updates-2026-08-10.md（sha256 已落盘）
+- entities/graphify.md：正文最新版本更新为 v0.9.38（2026-08-09），「版本动态」新增 correctness 修复五组：回调作用域回归（兄弟回调同名局部不再抑制）、Kotlin 属性初始化器调用边（含 by lazy/伴生对象/顶层）、Swift @Environment/工厂绑定接收者推断、SQL CTE 名不再当表引用、嵌套/模块作用域动态 import 边纳入 affected；star 104k→105k；sources 追加 updates-2026-08-10.md
+- index.md：graphify 摘要同步 v0.9.38，头部日期更新 2026-08-10
+- lint：32 页 0 问题
