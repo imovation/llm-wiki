@@ -195,3 +195,10 @@
 - entities/graphify.md：正文最新版本更新为 v0.9.38（2026-08-09），「版本动态」新增 correctness 修复五组：回调作用域回归（兄弟回调同名局部不再抑制）、Kotlin 属性初始化器调用边（含 by lazy/伴生对象/顶层）、Swift @Environment/工厂绑定接收者推断、SQL CTE 名不再当表引用、嵌套/模块作用域动态 import 边纳入 affected；star 104k→105k；sources 追加 updates-2026-08-10.md
 - index.md：graphify 摘要同步 v0.9.38，头部日期更新 2026-08-10
 - lint：32 页 0 问题
+
+## [2026-08-11] ingest | Comet 0.4.0-beta.16 → 0.4.0-beta.17、Graphify v0.9.38 → v0.9.39
+- cron 检测 raw/releases/updates-2026-08-11.md（sha256 已落盘）
+- entities/comet.md：正文最新版本更新为 0.4.0-beta.17（2026-08-10），新增「版本动态」小节（独立 Native 验证循环、Trae Hook 支持、Native 完成循环提速、便携式 `comet-state.yaml` 恢复、跨平台 Native 检查、doctor 识别 plugin-managed Superpowers、移除旧 Native 验证簿记）；star 2.4k→2.7k；sources 追加 updates-2026-08-11.md
+- entities/graphify.md：正文最新版本更新为 v0.9.39（2026-08-10），「版本动态」新增 correctness 修复：函数内动态 import 的 affected 缺口（按文件键控 dedupe）、Python 无类型接收者成员调用不再伪造 calls 边/god node、fuzzy dedup 不再过度合并一词差异实体、watch 纯文档删除即时重建、Objective-C 成员调用解析三连；sources 追加 updates-2026-08-11.md
+- index.md：graphify 摘要同步 v0.9.39，comet 摘要补充版本 0.4.0-beta.17，头部日期更新 2026-08-11
+- lint：通过

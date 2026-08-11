@@ -1,38 +1,38 @@
 {
   "codegraph": {
     "version": "v1.5.0",
-    "checked": "2026-08-10"
+    "checked": "2026-08-11"
   },
   "comet": {
-    "version": "0.4.0-beta.16",
-    "checked": "2026-08-10"
+    "version": "0.4.0-beta.17",
+    "checked": "2026-08-11"
   },
   "graphify": {
-    "version": "v0.9.38",
-    "checked": "2026-08-10"
+    "version": "v0.9.39",
+    "checked": "2026-08-11"
   },
   "llm-wiki-compiler": {
     "version": "v1.1.0",
-    "checked": "2026-08-10"
+    "checked": "2026-08-11"
   },
   "nashsu-llm-wiki": {
     "version": "v0.6.8",
-    "checked": "2026-08-10"
+    "checked": "2026-08-11"
   },
   "openspec": {
     "version": "1.8.0",
-    "checked": "2026-08-10"
+    "checked": "2026-08-11"
   },
   "openwiki": {
     "version": "v0.3.1",
-    "checked": "2026-08-10"
+    "checked": "2026-08-11"
   },
   "qmd": {
     "version": "v2.5.3",
-    "checked": "2026-08-10"
+    "checked": "2026-08-11"
   },
   "llm-wiki-skill": {
     "version": "2.1.0",
-    "checked": "2026-08-10"
+    "checked": "2026-08-11"
   }
 }
