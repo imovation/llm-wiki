@@ -202,3 +202,10 @@
 - entities/graphify.md：正文最新版本更新为 v0.9.39（2026-08-10），「版本动态」新增 correctness 修复：函数内动态 import 的 affected 缺口（按文件键控 dedupe）、Python 无类型接收者成员调用不再伪造 calls 边/god node、fuzzy dedup 不再过度合并一词差异实体、watch 纯文档删除即时重建、Objective-C 成员调用解析三连；sources 追加 updates-2026-08-11.md
 - index.md：graphify 摘要同步 v0.9.39，comet 摘要补充版本 0.4.0-beta.17，头部日期更新 2026-08-11
 - lint：通过
+
+## [2026-08-13] ingest | Graphify v0.9.39 → v0.9.41、OpenWiki v0.3.1 → v0.3.2
+- cron 检测 raw/releases/updates-2026-08-13.md（sha256 已落盘）
+- entities/graphify.md：正文最新版本更新为 v0.9.41（2026-08-12），「版本动态」新增 correctness/determinism/data-integrity 修复 13 项：update 拒绝用提取器失败缩小的图覆盖好数据、JS/TS catch 绑定伪造 indirect_call、Cargo.toml 包节点 + depends_on、扫描根不再被父目录 .gitignore 未锚定模式排除、API 提取 rationale 属性、source_file POSIX 规范化、warm cache 幽灵路径锚定、audit trail 单计数、C# 预处理块成员、query 截断横幅、PHP use 全限定解析、未解析 import 稳定 ref id、benchmark None 标签崩溃；star 105k→106k；sources 追加 updates-2026-08-13.md
+- entities/openwiki.md：正文版本表新增 v0.3.2（2026-08-11）——pin js-yaml/undici、Windows stdio MCP 注入 APPDATA/LOCALAPPDATA、dist/cli.js exec bit、CLI/仓库领域模块重构 + 测试、错误分类与运行记账加固、credentials 拆分；star 14.6k→15k；sources 追加 updates-2026-08-13.md
+- index.md：graphify 摘要同步 v0.9.41，openwiki 摘要同步 v0.3.2，头部日期更新 2026-08-13
+- lint：通过

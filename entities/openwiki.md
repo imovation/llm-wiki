@@ -1,16 +1,16 @@
 ---
 title: OpenWiki
 created: 2026-08-07
-updated: 2026-08-08
+updated: 2026-08-13
 type: entity
 tags: [openwiki, knowledge-base, cli]
-sources: [raw/session-history/2026-07-18-misty-river.md, raw/session-history/2026-07-20-cosmic-harbor.md, raw/session-history/2026-07-23-mighty-star.md, raw/releases/openwiki-changelog-2026-08.md, raw/articles/openwiki-readme.md]
+sources: [raw/session-history/2026-07-18-misty-river.md, raw/session-history/2026-07-20-cosmic-harbor.md, raw/session-history/2026-07-23-mighty-star.md, raw/releases/openwiki-changelog-2026-08.md, raw/articles/openwiki-readme.md, raw/releases/updates-2026-08-13.md]
 confidence: high
 ---
 
 # OpenWiki
 
-LangChain（[langchain-ai](https://github.com/langchain-ai/openwiki)）开源的 **Agent 文档 CLI**，自动生成并持续维护代码库或个人知识源的 wiki。TypeScript，MIT，约 14.6k star（2026-08）。^[raw/session-history/2026-07-18-misty-river.md] ^[raw/releases/openwiki-changelog-2026-08.md]
+LangChain（[langchain-ai](https://github.com/langchain-ai/openwiki)）开源的 **Agent 文档 CLI**，自动生成并持续维护代码库或个人知识源的 wiki。TypeScript，MIT，约 15k star（2026-08）。^[raw/session-history/2026-07-18-misty-river.md] ^[raw/releases/openwiki-changelog-2026-08.md]
 
 ## 是什么
 
@@ -44,7 +44,8 @@ LangChain（[langchain-ai](https://github.com/langchain-ai/openwiki)）开源的
 
 | 版本 | 日期 | 要点 |
 |---|---|---|
-| v0.3.1 | 2026-08-05 | latest；内部链接验证误报修复 |
+| v0.3.2 | 2026-08-11 | latest；安全与结构：pin 补丁版 js-yaml/undici（pnpm overrides）、Windows stdio MCP 子进程注入 `APPDATA`/`LOCALAPPDATA`、`dist/cli.js` exec bit 保留、CLI/仓库按领域模块重构 + 测试覆盖、错误分类与运行记账加固、credentials 纯逻辑拆分 |
+| v0.3.1 | 2026-08-05 | 内部链接验证误报修复 |
 | v0.3.0 | 2026-08-04 | 链接验证、agent 提示改进（guidance 可选/按需）、agent graph factory 导出 |
 | v0.2.5 | 2026-07-31 | 原生 wiki 可视化器、`.openwikiignore` |
 | 0.2.4 | 2026-07-29 | LangSmith connector、GitHub Copilot provider、多语言输出 |
