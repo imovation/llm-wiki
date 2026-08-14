@@ -209,3 +209,11 @@
 - entities/openwiki.md：正文版本表新增 v0.3.2（2026-08-11）——pin js-yaml/undici、Windows stdio MCP 注入 APPDATA/LOCALAPPDATA、dist/cli.js exec bit、CLI/仓库领域模块重构 + 测试、错误分类与运行记账加固、credentials 拆分；star 14.6k→15k；sources 追加 updates-2026-08-13.md
 - index.md：graphify 摘要同步 v0.9.41，openwiki 摘要同步 v0.3.2，头部日期更新 2026-08-13
 - lint：通过
+
+## [2026-08-14] ingest | Comet 0.4.0-beta.17 → 0.4.0-beta.18、Graphify v0.9.41 → v0.9.42、OpenSpec v1.8.0 → v1.9.0
+- cron 检测 raw/releases/updates-2026-08-14.md（sha256 已落盘）
+- entities/comet.md：正文最新版本更新为 0.4.0-beta.18（2026-08-13），「版本动态」新增：`comet eval` 独立 Skill 评估（去 comet-any 依赖、可选评估 agent Claude Code/Codex/Qoder/CodeBuddy、用户级 `~/.comet/eval/.env`、自动任务集、Langfuse 套件）、Native Supervisor Change 模式、worktree-aware Dashboard、WorkBuddy 平台支持、hook.allow_paths 白名单、Classic/OpenSpec 版本透传修复、依赖安全补丁（DOMPurify/Mermaid/Nanoid）；sources 追加 updates-2026-08-14.md
+- entities/graphify.md：正文最新版本更新为 v0.9.42（2026-08-13），「版本动态」新增 correctness/determinism/portability 修复：for...of/in 循环绑定遮蔽不再伪造 indirect_call、Python 相对子包 import 解析到 __init__、FIFO/设备文件不再挂起提取、等长重写重入队、built_at_commit 从分析仓库盖章、损坏语义缓存重提取、source_file POSIX 规范化/Windows 安装加固、graph.html hyperedge 凸包描边等；sources 追加 updates-2026-08-14.md
+- entities/openspec.md：正文最新版本更新为 v1.9.0（2026-08-13，Command Code & safer specs），新增「版本动态」小节（Command Code 工具支持、validate --archived、root 外诚实失败、场景计数、schema fork YAML 保真、.agents skills 所有权保护）；star 61.7k→64.8k；sources 追加 updates-2026-08-14.md
+- index.md：graphify 摘要同步 v0.9.42，comet 摘要同步 0.4.0-beta.18，头部日期更新 2026-08-14
+- lint：通过
