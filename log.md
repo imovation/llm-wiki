@@ -217,3 +217,12 @@
 - entities/openspec.md：正文最新版本更新为 v1.9.0（2026-08-13，Command Code & safer specs），新增「版本动态」小节（Command Code 工具支持、validate --archived、root 外诚实失败、场景计数、schema fork YAML 保真、.agents skills 所有权保护）；star 61.7k→64.8k；sources 追加 updates-2026-08-14.md
 - index.md：graphify 摘要同步 v0.9.42，comet 摘要同步 0.4.0-beta.18，头部日期更新 2026-08-14
 - lint：通过
+
+## [2026-08-18] ingest | Graphify v0.9.42 → v0.9.46、nashsu llm_wiki v0.6.8 → v0.6.9、OpenWiki v0.3.2 → v0.3.3、qmd v2.5.3 → v2.8.3
+- cron 检测 raw/releases/updates-2026-08-18.md（sha256 已落盘）
+- entities/graphify.md：正文最新版本更新为 v0.9.46（2026-08-17），「版本动态」新增：node-id 规范化对组合字符 caseless 稳定（casefold+NFKC 迭代至不动点）、Java 注解产出指向类型的 references 边（类字面量/成员返回类型）、query 下划线分词、post-checkout HEAD 未变跳过重建、Markdown 节点 node_kind（page/heading）+ frontmatter 解析、Common Lisp 提取（可选 [commonlisp] extra）、query 超预算诚实告警、非 UTF-8 ignore 文件不静默丢规则、dedup 超边重连幸存节点、剪枝清扫孤立 import 占位节点、同对节点保更具体关系边；star 106k→108k；sources 追加 updates-2026-08-18.md
+- entities/nashsu-llm-wiki.md：正文最新版本更新为 v0.6.9（2026-08-14），GitHub Actions 自动发布无说明（14 资产）；star 16.0k→16.5k；sources 追加 updates-2026-08-18.md
+- entities/openwiki.md：版本表新增 v0.3.3（2026-08-14）——built-in custom-MCP 连接器、connector 工具仅 personal 运行门控、MCP 分页 nextCursor 跟随、openai-compatible 可选 responses API、CI workflow env 由 provider 生成、只读安装 bundled skills 同步、流式输出剥离终端控制序列、LangSmith APAC region、LEDGER 纵向基准、OpenAI 模型推理前校验 api-key、init 生成 CLAUDE.md 指向 AGENTS.md、OpenRouter MAX_TOKENS 上限；star 15k→15.2k；sources 追加 updates-2026-08-18.md
+- entities/qmd.md：口径说明更新（v2.8.3 于 2026-08-16 发 tag，2.6.x 未发），新增「版本动态」小节——安全加固（项目本地 update hook 需 qmd trust 审批、路径/模型 URI 越界门控、符号链接与 ../ 索引越界封堵、mcp --http Origin/Host 校验防 DNS rebinding）、MCP 2026-07-28 协议（TS SDK 2.x）、node-llama-cpp 3.20.0、下载进度条默认关闭、--glob→--mask 别名、cleanup 回收 content/FTS 空间、embed 独占锁等；star 28k→28.9k；sources 追加 updates-2026-08-18.md
+- index.md：graphify 摘要同步 v0.9.46，openwiki 摘要同步 v0.3.3，头部日期更新 2026-08-18
+- lint：通过

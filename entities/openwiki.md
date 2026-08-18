@@ -1,16 +1,16 @@
 ---
 title: OpenWiki
 created: 2026-08-07
-updated: 2026-08-13
+updated: 2026-08-18
 type: entity
 tags: [openwiki, knowledge-base, cli]
-sources: [raw/session-history/2026-07-18-misty-river.md, raw/session-history/2026-07-20-cosmic-harbor.md, raw/session-history/2026-07-23-mighty-star.md, raw/releases/openwiki-changelog-2026-08.md, raw/articles/openwiki-readme.md, raw/releases/updates-2026-08-13.md]
+sources: [raw/session-history/2026-07-18-misty-river.md, raw/session-history/2026-07-20-cosmic-harbor.md, raw/session-history/2026-07-23-mighty-star.md, raw/releases/openwiki-changelog-2026-08.md, raw/articles/openwiki-readme.md, raw/releases/updates-2026-08-13.md, raw/releases/updates-2026-08-18.md]
 confidence: high
 ---
 
 # OpenWiki
 
-LangChain（[langchain-ai](https://github.com/langchain-ai/openwiki)）开源的 **Agent 文档 CLI**，自动生成并持续维护代码库或个人知识源的 wiki。TypeScript，MIT，约 15k star（2026-08）。^[raw/session-history/2026-07-18-misty-river.md] ^[raw/releases/openwiki-changelog-2026-08.md]
+LangChain（[langchain-ai](https://github.com/langchain-ai/openwiki)）开源的 **Agent 文档 CLI**，自动生成并持续维护代码库或个人知识源的 wiki。TypeScript，MIT，约 15.2k star（2026-08）。^[raw/session-history/2026-07-18-misty-river.md] ^[raw/releases/openwiki-changelog-2026-08.md]
 
 ## 是什么
 
@@ -44,7 +44,8 @@ LangChain（[langchain-ai](https://github.com/langchain-ai/openwiki)）开源的
 
 | 版本 | 日期 | 要点 |
 |---|---|---|
-| v0.3.2 | 2026-08-11 | latest；安全与结构：pin 补丁版 js-yaml/undici（pnpm overrides）、Windows stdio MCP 子进程注入 `APPDATA`/`LOCALAPPDATA`、`dist/cli.js` exec bit 保留、CLI/仓库按领域模块重构 + 测试覆盖、错误分类与运行记账加固、credentials 纯逻辑拆分 |
+| v0.3.3 | 2026-08-14 | latest；连接器与 LLM 集成：built-in custom-MCP 连接器（任意 MCP 源）、connector 工具仅限 personal/local-wiki 运行、MCP 工具分页 `nextCursor` 跟随、openai-compatible 可选 responses API、CI workflow env 由配置 provider 生成、只读安装 bundled skills 同步、流式输出剥离终端控制序列、LangSmith APAC region、LEDGER 纵向基准（wiki grounding/forgetting）、OpenAI 模型推理前校验 api-key 可用性、init 生成 `CLAUDE.md` 指向 `AGENTS.md`、OpenRouter 输出 token 上限 `OPENWIKI_OPENROUTER_MAX_TOKENS` |
+| v0.3.2 | 2026-08-11 | 安全与结构：pin 补丁版 js-yaml/undici（pnpm overrides）、Windows stdio MCP 子进程注入 `APPDATA`/`LOCALAPPDATA`、`dist/cli.js` exec bit 保留、CLI/仓库按领域模块重构 + 测试覆盖、错误分类与运行记账加固、credentials 纯逻辑拆分 |
 | v0.3.1 | 2026-08-05 | 内部链接验证误报修复 |
 | v0.3.0 | 2026-08-04 | 链接验证、agent 提示改进（guidance 可选/按需）、agent graph factory 导出 |
 | v0.2.5 | 2026-07-31 | 原生 wiki 可视化器、`.openwikiignore` |
