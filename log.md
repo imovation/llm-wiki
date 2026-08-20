@@ -226,3 +226,10 @@
 - entities/qmd.md：口径说明更新（v2.8.3 于 2026-08-16 发 tag，2.6.x 未发），新增「版本动态」小节——安全加固（项目本地 update hook 需 qmd trust 审批、路径/模型 URI 越界门控、符号链接与 ../ 索引越界封堵、mcp --http Origin/Host 校验防 DNS rebinding）、MCP 2026-07-28 协议（TS SDK 2.x）、node-llama-cpp 3.20.0、下载进度条默认关闭、--glob→--mask 别名、cleanup 回收 content/FTS 空间、embed 独占锁等；star 28k→28.9k；sources 追加 updates-2026-08-18.md
 - index.md：graphify 摘要同步 v0.9.46，openwiki 摘要同步 v0.3.3，头部日期更新 2026-08-18
 - lint：通过
+
+## [2026-08-20] ingest | Graphify v0.9.46 → v0.9.47、OpenSpec v1.9.0 → v1.10.0
+- cron 检测 raw/releases/updates-2026-08-20.md（sha256 已落盘）
+- entities/graphify.md：正文最新版本更新为 v0.9.47（2026-08-19），「版本动态」新增 correctness/portability 修复 13 项：超时提取按文件块二分降级、缓存键控不再折叠 symlink、extract --out sidecar 不再写回源码树、Windows 无盘符路径读防护、partial-parse 告警去硬编码引用改报符号数、Obsidian 导出社区标签保留非 ASCII、JS/TS 工厂对象字面量成员建模（防 phantom-owner）、graph.json 字段序稳定、query 声明所用图与节点数、claude 后端 ThinkingBlock 崩溃修复、no-op 不再改写 manifest 时间戳、C# 12 主构造器 references 边、INFERRED 边 rubric confidence_score + 旧数值 confidence 归一；star 108k；sources 追加 updates-2026-08-20.md
+- entities/openspec.md：正文最新版本更新为 v1.10.0（2026-08-19，Zed support & quieter installs），「版本动态」新增：Zed Agent 支持（.agents/skills、/openspec-propose）、init --language 非英语产物、零 install scripts 静默安装、任务计划须含验收判据、多选 picker 按键帮助、feedback 标题/正文修复、归档死路引导、stores specs 路径、profile 缺 sync、OpenCode 命令名丢失、telemetry 移 stderr、update 不再建议重启 IDE；star 64.8k→65.5k；sources 追加 updates-2026-08-20.md
+- index.md：graphify 摘要同步 v0.9.47，openspec 摘要补充版本 v1.10.0，头部日期更新 2026-08-20
+- lint：通过

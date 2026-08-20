@@ -1,16 +1,16 @@
 ---
 title: Graphify
 created: 2026-08-07
-updated: 2026-08-18
+updated: 2026-08-20
 type: entity
 tags: [graphify, knowledge-base, cli]
-sources: [raw/session-history/2026-07-18-misty-river.md, raw/session-history/2026-07-20-cosmic-harbor.md, raw/session-history/2026-07-23-mighty-star.md, raw/releases/tool-updates-2026-08.md, raw/releases/updates-2026-08-08.md, raw/releases/updates-2026-08-09.md, raw/releases/updates-2026-08-10.md, raw/releases/updates-2026-08-11.md, raw/releases/updates-2026-08-13.md, raw/releases/updates-2026-08-14.md, raw/releases/updates-2026-08-18.md]
+sources: [raw/session-history/2026-07-18-misty-river.md, raw/session-history/2026-07-20-cosmic-harbor.md, raw/session-history/2026-07-23-mighty-star.md, raw/releases/tool-updates-2026-08.md, raw/releases/updates-2026-08-08.md, raw/releases/updates-2026-08-09.md, raw/releases/updates-2026-08-10.md, raw/releases/updates-2026-08-11.md, raw/releases/updates-2026-08-13.md, raw/releases/updates-2026-08-14.md, raw/releases/updates-2026-08-18.md, raw/releases/updates-2026-08-20.md]
 confidence: high
 ---
 
 # Graphify
 
-[Graphify-Labs/graphify](https://github.com/Graphify-Labs/graphify)（作者 Safi Shamsi，YC S26）的**开源代码知识图谱工具**（Python，Apache-2.0 + MIT）。约 108k star（2026-08）、1.2M+ PyPI 下载，最新 v0.9.46（2026-08-17，迭代高频）。将整个代码库（代码/文档/PDF/图片/视频/SQL/Terraform）转化为可查询的**知识图谱**，让 agent 以图查询替代 grep。^[raw/session-history/2026-07-23-mighty-star.md] ^[raw/releases/tool-updates-2026-08.md]
+[Graphify-Labs/graphify](https://github.com/Graphify-Labs/graphify)（作者 Safi Shamsi，YC S26）的**开源代码知识图谱工具**（Python，Apache-2.0 + MIT）。约 108k star（2026-08）、1.2M+ PyPI 下载，最新 v0.9.47（2026-08-19，迭代高频）。将整个代码库（代码/文档/PDF/图片/视频/SQL/Terraform）转化为可查询的**知识图谱**，让 agent 以图查询替代 grep。^[raw/session-history/2026-07-23-mighty-star.md] ^[raw/releases/tool-updates-2026-08.md]
 
 ## 是什么
 
@@ -58,6 +58,8 @@ detect() → extract() → build_graph() → cluster() → analyze() → report(
 - **v0.9.42（2026-08-13，correctness/determinism/portability 版）**：JS/TS `for...of`/`for...in` 循环绑定遮蔽——不再伪造 `indirect_call` 边（#2685，完成 loop/closure/catch 遮蔽家族 #2568/#2569/#2517）；Python 相对子包 import（`from ..pkg.sub import x`）解析到包 `__init__`（#2688）；树中 FIFO/设备等非普通文件不再挂起提取、直接跳过（#2463）；装了但坏的 tree-sitter-sql 下 `.sql` 文件解析失败报真实错误而非"未安装"（#2602）；`graphify update` 在同一 mtime tick 内重写到等长文件会重新入队（#2466，补 0.9.40 文件哈希守卫）；`built_at_commit` 溯源从被分析仓库而非 shell cwd 盖章（#2699）；损坏语义缓存条目浮出并重新提取而非静默错过（#2683）；`graph_has_legacy_ids` 不再对全局 MCP 节点 id 误报（#2408）；`source_file`/模型可见路径 POSIX 规范化、Windows 原子写入与安装加固（含只读打包 bundle，#2620/#2622/#2453）；`GRAPH_REPORT.md` 用可移植 basename 而非绝对主机路径（#2682）；`apm.yml` fallback 解析器捕获包版本（#2465）；`affected` 解析 `./` 相对 seed 而非静默空结果（#2707）；`graph.html` hyperedge 区域按凸包序描边、着色多边形不再自交（#2449）；Windows 可移植性测试修复、`ARCHITECTURE.md` 模块表刷新（doc 一致性测试）+ README CI/Windows 前提说明。^[raw/releases/updates-2026-08-14.md]
 
 - **v0.9.46（2026-08-17，correctness/feature 版，自 v0.9.42 跳跃）**：node-id 规范化对组合字符序列 caseless 稳定——`casefold` 与 NFKC 不交换，单遍处理会留 `normalize_id(s) != normalize_id(s.casefold())`（如希腊语 ypogegrammeni 后接组合重音），现迭代 casefold+NFKC 至不动点；字母/数字 id 不变，既有图不重键。Java 注解现产出指向其类型的 `references` 边——含类字面量实参（`@Repeatable(Foo.class)`、`@Uses({A.class, B.class})`）与注解成员返回类型，容器注解不再成孤立岛；字符串/枚举实参不被误当类型引用（#2426）。`graphify query` 将 `_` 视为分词符（同 `-`），`user_service` 可匹配 `user-service` 标签，coverage-scaling 防无关单 token 噪声（#2473）。`post-checkout` 钩子在 HEAD 未变时跳过重建（如 `git checkout -b` 无起点），建分支不再触发全量图重建（#2421）。Markdown 节点携带 `node_kind`（`page`/`heading`），前导 YAML frontmatter 解析为受限净化属性挂到页节点；frontmatter 内 `#` 注释不再被误提取为标题（id 不变，既有 markdown 图不重键）。新增 Common Lisp `.lisp`/`.cl`/`.lsp`/`.asd` 提取（tree-sitter-commonlisp，可选 `[commonlisp]` extra）——包/类/函数/方法/generic/宏/变量定义器与同文件调用，`open`/`:use` 的包跨文件解析。`query` 节点集适配预算但边超预算时打印诚实的 "complete answer over budget" 及真实大小，不再静默返回数倍预算负载（#2784）。非 UTF-8 编码的 `.gitignore`/`.graphifyignore` 不再静默丢规则——按 UTF-8→UTF-16 BOM→宿主 codepage/latin-1 解码并告警（#2798）。节点 dedup 合并时超边成员重连至幸存节点而非静默丢弃（#2805）；剪枝源文件时清扫被遗留的度 0 外部 import 占位节点（真孤立节点带 `source_file` 不受影响，#2807）；同一节点对多关系边保留更具体关系（`calls`/`imports`/`inherits`…）而非被通用 `references`/`uses`/`mentions` 覆盖——此前真 `calls` 可被降级为 `references` 后从调用图掉落（#2803）。^[raw/releases/updates-2026-08-18.md]
+
+- **v0.9.47（2026-08-19，correctness/portability 版）**：超时提取按文件块二分降级而非整块失败——单个慢文件不再拖掉同块其余文件，子进程/SDK/botocore 超时与超 context 走同一有界 split-and-merge 路径，无法拆分的单文件超时留未盖章、下次重试（#2866）；缓存按文件键控不再折叠符号链接——symlink 别名与目标各自独立身份，warm cache 下一个不再顶掉另一个，detect 层越界防护不变（#2832）；`graphify extract --out <dir>` 转换的 Office/Google-Workspace sidecar 不再写回被扫描源码树——sidecar 走 cache root、内容哈希仍锚定扫描根，只读/固定 checkout 保持干净（#2787）；git-hook 项目外读防护在 Windows 不再把有根无盘符路径（`\foo\bar`）误判为 cwd 相对（#2795）；partial-parse 告警不再硬编码指向已关闭的 Kotlin #2551 引用，改报幸存符号数（#2788）；Obsidian 导出社区标签保留非 ASCII 字母（Hangul/CJK/西里尔/带重音拉丁）不再塌缩成同一个下划线标签，graph-view 配色组查同名标签、颜色重新对齐（#2862）；JS/TS 工厂函数把可调用成员赋给本地对象字面量（`const api = {}; api.foo = fn`）现保留这些成员——API 对象建模在工厂下、被赋函数挂为方法（含箭头赋值与工厂内调用边），仅对证明为对象字面量绑定的标识符铸造 owner，不重燃 phantom-owner 泛滥，`contains` 边只发一次（#2745）；`graph.json` 字段序跨 read-rebuild 稳定——未变图上重跑 `graphify update` 产出字节级相同文件（#2582）；`graphify query` 答案开头声明打开的是哪个图及其节点数（CWD 下为相对、否则绝对）——父项目内查询不再静默用错语料而毫无提示（#2789）；`claude` 后端 extended-thinking 以 thinking 块开头的响应不再 `AttributeError: 'ThinkingBlock'`，改读首个文本块（#2697）；`graphify update`/`save_manifest` no-op 不再改写 `manifest.json` 时间戳——无变更时 `graphify-out/` 不再变脏、不再产生尾部 graph 提交，真实变更仍持久化（#2838）；C# 12 主构造器参数现在被遍历——`class Svc(IRepo repo)` 产出指向 `IRepo` 的 `references` 边、经 `repo` 的调用可解析，内置/类型参数类型不伪造（#2829）；AST 推导的 INFERRED 边带按关系键控的 rubric `confidence_score`（`uses` 0.95、`indirect_call`/未解析跨文件 `calls` 0.85）而非落在 rubric 禁止的 0.5 或扁平 0.8，INFERRED 默认 0.5→0.55 使每条无分数 INFERRED 边落在离散 rubric 集上（#2813）；存数值 `confidence` 的旧版 `graph.json`（pre-enum）增量重载不再每条边告警一次——数值归一为 INFERRED 标签、原浮点存进 `confidence_score`。^[raw/releases/updates-2026-08-20.md]
 
 ## 相关
 
