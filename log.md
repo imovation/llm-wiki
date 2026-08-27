@@ -233,3 +233,8 @@
 - entities/openspec.md：正文最新版本更新为 v1.10.0（2026-08-19，Zed support & quieter installs），「版本动态」新增：Zed Agent 支持（.agents/skills、/openspec-propose）、init --language 非英语产物、零 install scripts 静默安装、任务计划须含验收判据、多选 picker 按键帮助、feedback 标题/正文修复、归档死路引导、stores specs 路径、profile 缺 sync、OpenCode 命令名丢失、telemetry 移 stderr、update 不再建议重启 IDE；star 64.8k→65.5k；sources 追加 updates-2026-08-20.md
 - index.md：graphify 摘要同步 v0.9.47，openspec 摘要补充版本 v1.10.0，头部日期更新 2026-08-20
 - lint：通过
+
+## [2026-08-26] query | N4-harness 咨询（Pi 基座 + LLM wiki 知识库选型与实现方案）
+- 调研：Pi 机制（skills/Agent Skills 标准、extensions、MCP、AGENTS.md 上下文）、N4 开发生态（Gradle 模块构建、runtime profile、slotomatic、signing、Workbench/Station、bajaux/BajaScript）、LLM wiki 工具全景（llmwiki/andmattia、llm-wiki-compiler、my-llm-wiki、Pratiyush llm-wiki、llm-wiki-web、felipetruman llmwiki）
+- 结论：知识库层选 Karpathy 裸模式 + Pi 原生维护（零依赖），增长期接 qmd MCP 搜索，可选 llm-wiki-compiler 一次性编译官方语料开库
+- 未归档（待用户确认后按 Query 流程落页）
