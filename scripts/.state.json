@@ -17,15 +17,15 @@
   },
   "nashsu-llm-wiki": {
     "version": "v0.6.13",
-    "checked": "2026-11-06"
+    "checked": "2026-11-20"
   },
   "openspec": {
-    "version": "1.16.0",
-    "checked": "2026-11-06"
+    "version": "2.1.1",
+    "checked": "2026-11-20"
   },
   "openwiki": {
     "version": "v0.9.0",
-    "checked": "2026-11-06"
+    "checked": "2026-11-20"
   },
   "qmd": {
     "version": "v2.8.3",
